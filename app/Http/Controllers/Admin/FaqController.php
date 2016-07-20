@@ -1,20 +1,20 @@
 <?php
 
-namespace Fully\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin;
 
 use View;
 use Input;
 use Flash;
-use Fully\Services\Pagination;
-use Fully\Http\Controllers\Controller;
-use Fully\Repositories\Faq\FaqInterface;
-use Fully\Repositories\Faq\FaqRepository as Faq;
-use Fully\Exceptions\Validation\ValidationException;
+use App\Services\Pagination;
+use App\Http\Controllers\Controller;
+use App\Repositories\Faq\FaqInterface;
+use App\Repositories\Faq\FaqRepository as Faq;
+use App\Exceptions\Validation\ValidationException;
 
 /**
  * Class FaqController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class FaqController extends Controller
 {

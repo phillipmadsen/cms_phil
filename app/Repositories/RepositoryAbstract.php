@@ -1,11 +1,11 @@
 <?php
 
-namespace Fully\Repositories;
+namespace App\Repositories;
 
 /**
  * Class RepositoryAbstract.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 abstract class RepositoryAbstract extends AbstractValidator
 {

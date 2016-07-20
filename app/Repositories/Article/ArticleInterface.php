@@ -1,13 +1,13 @@
 <?php
 
-namespace Fully\Repositories\Article;
+namespace App\Repositories\Article;
 
-use Fully\Repositories\RepositoryInterface;
+use App\Repositories\RepositoryInterface;
 
 /**
  * Interface ArticleInterface.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 interface ArticleInterface extends RepositoryInterface
 {

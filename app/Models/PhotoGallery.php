@@ -1,15 +1,15 @@
 <?php
 
-namespace Fully\Models;
+namespace App\Models;
 
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Cviebrock\EloquentSluggable\SluggableInterface;
-use Fully\Interfaces\ModelInterface as ModelInterface;
+use App\Interfaces\ModelInterface as ModelInterface;
 
 /**
  * Class PhotoGallery.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class PhotoGallery extends BaseModel implements ModelInterface, SluggableInterface
 {
@@ -26,7 +26,7 @@ class PhotoGallery extends BaseModel implements ModelInterface, SluggableInterfa
 
     public function photos()
     {
-        return $this->morphMany('Fully\Models\Photo', 'relationship', 'type');
+        return $this->morphMany(App\Models\Photo::class, 'relationship', 'type');
     }
 
     public function setUrlAttribute($value)

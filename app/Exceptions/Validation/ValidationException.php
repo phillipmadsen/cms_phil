@@ -1,13 +1,13 @@
 <?php
 
-namespace Fully\Exceptions\Validation;
+namespace App\Exceptions\Validation;
 
 use Exception;
 
 /**
  * Class ValidationException.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class ValidationException extends Exception
 {

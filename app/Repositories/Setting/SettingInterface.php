@@ -1,11 +1,11 @@
 <?php
 
-namespace Fully\Repositories\Setting;
+namespace App\Repositories\Setting;
 
 /**
  * Interface SettingInterface.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 interface SettingInterface
 {

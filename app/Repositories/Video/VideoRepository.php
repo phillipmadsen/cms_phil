@@ -1,18 +1,18 @@
 <?php
 
-namespace Fully\Repositories\Video;
+namespace App\Repositories\Video;
 
 use Config;
-use Fully\Models\Video;
+use App\Models\Video;
 use VideoApi;
-use Fully\Repositories\CrudableInterface;
-use Fully\Repositories\RepositoryAbstract;
-use Fully\Exceptions\Validation\ValidationException;
+use App\Repositories\CrudableInterface;
+use App\Repositories\RepositoryAbstract;
+use App\Exceptions\Validation\ValidationException;
 
 /**
  * Class VideoRepository.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class VideoRepository extends RepositoryAbstract implements VideoInterface, CrudableInterface
 {
@@ -124,7 +124,7 @@ class VideoRepository extends RepositoryAbstract implements VideoInterface, Crud
      *
      * @return bool|mixed
      *
-     * @throws \Fully\Exceptions\Validation\ValidationException
+     * @throws \App\Exceptions\Validation\ValidationException
      */
     public function create($attributes)
     {
@@ -145,7 +145,7 @@ class VideoRepository extends RepositoryAbstract implements VideoInterface, Crud
      *
      * @return bool|mixed
      *
-     * @throws \Fully\Exceptions\Validation\ValidationException
+     * @throws \App\Exceptions\Validation\ValidationException
      */
     public function update($id, $attributes)
     {

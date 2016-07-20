@@ -1,13 +1,13 @@
 <?php
 
-namespace Fully\Services;
+namespace App\Services;
 
 use Mail;
 
 /**
  * Class Mailer
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class Mailer implements MailerInterface
 {

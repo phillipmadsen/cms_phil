@@ -1,11 +1,11 @@
 <?php
 
-namespace Fully\Repositories\PhotoGallery;
+namespace App\Repositories\PhotoGallery;
 
 /**
  * Class AbstractPhotoGalleryDecorator.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 abstract class AbstractPhotoGalleryDecorator implements PhotoGalleryInterface
 {

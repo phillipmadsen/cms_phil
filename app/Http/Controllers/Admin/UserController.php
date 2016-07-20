@@ -1,21 +1,21 @@
 <?php
 
-namespace Fully\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin;
 
 use View;
 use Flash;
 use Redirect;
 use Sentinel;
 use Validator;
-use Fully\Models\User;
-use Fully\Models\Role;
+use App\Models\User;
+use App\Models\Role;
 use Illuminate\Http\Request;
-use Fully\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 /**
  * Class UserController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author phillip madsen <contact@affordableprogrammer.com>
  */
 class UserController extends Controller
 {
@@ -89,6 +89,25 @@ class UserController extends Controller
         }
 
         return Redirect::action('Admin\UserController@index');
+    }
+
+
+     public function updateAvatar(Request $request)
+    {
+        $this->validate($request, [
+            'file_name'     => 'required|mimes:jpeg,bmp,png|between:1,7000',
+        ]);
+
+        $filename  = $request->file('file_name')->getRealPath();
+
+        Cloudder::upload($filename, null);
+        list($width, $height) = getimagesize($filename);
+
+        $fileUrl = Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height" => $height]);
+
+        $this->user->update(['avatar' => $fileUrl]);
+
+        return redirect()->back()->with('info', 'Your Avatar has been updated Successfully');
     }
 
     /**
@@ -206,4 +225,13 @@ class UserController extends Controller
 
         return view('backend.user.confirm-destroy', compact('user'))->with('active', 'user');
     }
+
+
+	public function lists()
+	{
+		//$user = Sentinel::findUserById($id);
+		//$users = User::orderBy('title', 'id')->list()->get();
+
+		return $this->user->get()->where('lang', $this->getLang())->lists('title', 'id');
+	}
 }

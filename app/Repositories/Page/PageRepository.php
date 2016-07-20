@@ -1,18 +1,18 @@
 <?php
 
-namespace Fully\Repositories\Page;
+namespace App\Repositories\Page;
 
-use Fully\Models\Page;
+use App\Models\Page;
 use Config;
 use Response;
-use Fully\Repositories\RepositoryAbstract;
-use Fully\Repositories\CrudableInterface as CrudableInterface;
-use Fully\Exceptions\Validation\ValidationException;
+use App\Repositories\RepositoryAbstract;
+use App\Repositories\CrudableInterface as CrudableInterface;
+use App\Exceptions\Validation\ValidationException;
 
 /**
  * Class PageRepository.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class PageRepository extends RepositoryAbstract implements PageInterface, CrudableInterface
 {
@@ -119,7 +119,7 @@ class PageRepository extends RepositoryAbstract implements PageInterface, Crudab
      *
      * @return bool|mixed
      *
-     * @throws \Fully\Exceptions\Validation\ValidationException
+     * @throws \App\Exceptions\Validation\ValidationException
      */
     public function create($attributes)
     {
@@ -141,7 +141,7 @@ class PageRepository extends RepositoryAbstract implements PageInterface, Crudab
      *
      * @return bool|mixed
      *
-     * @throws \Fully\Exceptions\Validation\ValidationException
+     * @throws \App\Exceptions\Validation\ValidationException
      */
     public function update($id, $attributes)
     {

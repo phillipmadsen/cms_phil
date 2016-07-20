@@ -1,20 +1,32 @@
 @extends('backend/layout/layout')
-@section('content')
-<!-- Content Header (Page header) -->
-<section class="content-header">
-    <h1> Category
-        <small> | Update Category</small>
-    </h1>
-    <ol class="breadcrumb">
+@section('topscripts')
+<link rel="stylesheet" href="{!! asset('assets/bootstrap/css/bootstrap-tagsinput.css') !!}" type="text/css" />
+<link rel="stylesheet" href="{!! asset('jasny-bootstrap/css/jasny-bootstrap.min.css') !!}" type="text/css" />
+
+@endsection
+
+@section('pagetitle')
+    <div class="row">
+        <div class="col-sm-12">
+            <!-- start: PAGE TITLE & BREADCRUMB -->
+            <ol class="breadcrumb">
         <li><a href="{!! url(getLang(). '/admin/category') !!}"><i class="fa fa-list"></i> Category</a></li>
         <li class="active">Update Category</li>
-    </ol>
-</section>
-<br>
-<br>
+            </ol>
+            <div class="page-header">
+                <h1> Category <small> | Update Category</small> </h1>
+            </div>
+            <!-- end: PAGE TITLE & BREADCRUMB -->
+        </div>
+    </div>
+@endsection
+
+@section('content')
+
+
 <div class="container">
 
-    {!! Form::open( array( 'route' => array( getLang() . '.admin.category.update', $category->id), 'method' => 'PATCH')) !!}
+    {!! Form::open( array( 'url' => array( getLang() . 'admin/category/update/', $category->id), 'method' => 'PATCH')) !!}
     <!-- Title -->
     <div class="control-group {!! $errors->has('title') ? 'has-error' : '' !!}">
         <label class="control-label" for="first-name">Title</label>
@@ -29,8 +41,15 @@
     <br>
     <!-- Form actions -->
     {!! Form::submit('Save Changes', array('class' => 'btn btn-success')) !!}
-    <a href="{!! langUrl('admin/category') !!}" class="btn btn-default">&nbsp;Cancel</a>
+    <a href="{!! url( getLang() .'/admin/category') !!}" class="btn btn-default">&nbsp;Cancel</a>
     {!! Form::close() !!}
 
 </div>
-@stop
+@endsection
+
+@section('bottomscripts')
+@endsection
+
+@section('clipinline')
+
+@endsection

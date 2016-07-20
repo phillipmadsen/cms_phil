@@ -1,13 +1,13 @@
 <?php
 
-namespace Fully\Repositories\PhotoGallery;
+namespace App\Repositories\PhotoGallery;
 
-use Fully\Repositories\RepositoryInterface;
+use App\Repositories\RepositoryInterface;
 
 /**
  * Interface PhotoGalleryInterface.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 interface PhotoGalleryInterface extends RepositoryInterface
 {

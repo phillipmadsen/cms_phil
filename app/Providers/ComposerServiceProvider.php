@@ -1,6 +1,6 @@
 <?php
 
-namespace Fully\Providers;
+namespace App\Providers;
 
 use View;
 use Illuminate\Support\ServiceProvider;
@@ -13,13 +13,15 @@ class ComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         // Frontend
-        View::composer('frontend.layout.menu', 'Fully\Composers\MenuComposer');
-        View::composer('frontend.layout.layout', 'Fully\Composers\SettingComposer');
-        View::composer('frontend.layout.footer', 'Fully\Composers\ArticleComposer');
-        View::composer('frontend.news.sidebar', 'Fully\Composers\NewsComposer');
+        View::composer('frontend/layout/menu', 'App\Composers\MenuComposer');
+        View::composer('frontend/layout/layout', 'App\Composers\SettingComposer');
+        View::composer('frontend/layout/footer', 'App\Composers\ArticleComposer');
+        View::composer('frontend/layout/partials/footer/footer-widgets', 'App\Composers\ArticleComposer');
+        View::composer('frontend/article/show', 'App\Composers\ArticleComposer');
+        View::composer('frontend/news/sidebar', 'App\Composers\NewsComposer');
 
         // Backend
-        View::composer('backend/layout/layout', 'Fully\Composers\Admin\MenuComposer');
+        View::composer('backend/layout/layout', 'App\Composers\Admin\MenuComposer');
     }
 
     /**

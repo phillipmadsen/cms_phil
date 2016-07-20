@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateMaillistTable extends Migration
@@ -9,7 +9,7 @@ class CreateMaillistTable extends Migration
      */
     public function up()
     {
-        Schema::create('maillist', function ($table) {
+        Schema::create('maillist', function (Blueprint $table) {
 
             $table->increments('id');
             $table->string('email');

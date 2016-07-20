@@ -1,20 +1,20 @@
 <?php
 
-namespace Fully\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin;
 
-use Fully\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Redirect;
 use View;
 use Illuminate\Support\Str;
 use Input;
 use Flash;
 use Validator;
-use Fully\Models\Role;
+use App\Models\Role;
 
 /**
  * Class RoleController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class RoleController extends Controller
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace Fully\Search\Facade;
+namespace App\Search\Facade;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * Class Search.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class Search extends Facade
 {

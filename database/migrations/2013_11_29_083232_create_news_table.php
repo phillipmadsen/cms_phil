@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateNewsTable extends Migration
@@ -9,7 +10,7 @@ class CreateNewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('news', function ($table) {
+        Schema::create('news', function (Blueprint $table) {
 
             $table->increments('id');
             $table->string('title', 255);
@@ -22,6 +23,7 @@ class CreateNewsTable extends Migration
             $table->string('file_name', 255)->nullable();
             $table->integer('file_size')->nullable();
             $table->string('lang', 20);
+            $table->engine = 'InnoDB';
         });
     }
 

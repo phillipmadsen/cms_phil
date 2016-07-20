@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateArticlesTable extends Migration
@@ -9,7 +10,7 @@ class CreateArticlesTable extends Migration
      */
     public function up()
     {
-        Schema::create('articles', function ($table) {
+        Schema::create('articles', function (Blueprint $table) {
 
             $table->increments('id');
             $table->string('title', 255);
@@ -24,7 +25,31 @@ class CreateArticlesTable extends Migration
             $table->integer('file_size')->nullable();
             $table->string('lang', 20);
             $table->timestamps();
+            $table->engine = 'InnoDB';
         });
+
+        Schema::create('tags', function (Blueprint $table) {
+
+            $table->increments('id');
+            $table->string('name');
+            $table->string('slug');
+            $table->timestamps();
+            $table->string('lang', 20);
+            $table->engine = 'InnoDB';
+        });
+
+         Schema::create('articles_tags', function (Blueprint $table) {
+
+            $table->increments('id');
+            $table->integer('article_id')->unsigned()->index();
+            $table->integer('tag_id')->unsigned()->index();
+            $table->timestamps();
+            $table->engine = 'InnoDB';
+        });
+
+
+
+
     }
 
     /**
@@ -32,6 +57,8 @@ class CreateArticlesTable extends Migration
      */
     public function down()
     {
+        Schema::drop('articles_tags');
+        Schema::drop('tags');
         Schema::drop('articles');
     }
 }

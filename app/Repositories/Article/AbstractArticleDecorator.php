@@ -1,11 +1,11 @@
 <?php
 
-namespace Fully\Repositories\Article;
+namespace App\Repositories\Article;
 
 /**
  * Class AbstractArticleDecorator.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 abstract class AbstractArticleDecorator implements ArticleInterface
 {

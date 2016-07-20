@@ -1,13 +1,13 @@
 <?php
 
-namespace Fully\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Setting.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class Setting extends Model
 {

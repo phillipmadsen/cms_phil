@@ -1,13 +1,13 @@
 <?php
 
-namespace Fully\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Slider.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class Slider extends Model
 {
@@ -15,6 +15,6 @@ class Slider extends Model
 
     public function images()
     {
-        return $this->morphMany('Fully\Models\Photo', 'relationship', 'type');
+        return $this->morphMany('App\Models\Photo', 'relationship', 'type');
     }
 }

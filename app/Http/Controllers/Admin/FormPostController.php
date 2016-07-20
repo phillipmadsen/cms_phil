@@ -1,16 +1,16 @@
 <?php
 
-namespace Fully\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin;
 
-use Fully\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use View;
-use Fully\Models\FormPost;
+use App\Models\FormPost;
 use Response;
 
 /**
  * Class FormPostController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class FormPostController extends Controller
 {

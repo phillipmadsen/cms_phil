@@ -1,15 +1,25 @@
 <?php
 
-namespace Fully\Console\Commands;
+namespace App\Console\Commands;
 
+use Illuminate\Database\Seeder;
 use Schema;
 use Sentinel;
+use Illuminate\Http\Request;
+use App\Http\Requests;
 use Illuminate\Console\Command;
+use Illuminate\Database\Eloquent\Model;
+use File;
+use Carbon;
+use Image;
+use App\Models\User;
+use App\Models\UserInfo;
+use App\Models\Payment;
 
 /**
  * Class AppCommand.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class AppCommand extends Command
 {
@@ -33,8 +43,10 @@ class AppCommand extends Command
      * @var array
      */
     protected $userData = array(
+        'last_login' => null,
         'first_name' => null,
         'last_name' => null,
+        'username' => null,
         'email' => null,
         'password' => null,
     );
@@ -45,10 +57,11 @@ class AppCommand extends Command
     public function handle()
     {
 
-        // drop tables
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::dropIfExists('articles');
+        Schema::dropIfExists('tags');
         Schema::dropIfExists('articles_tags');
-        Schema::dropIfExists('categories');
+
         Schema::dropIfExists('form_posts');
         Schema::dropIfExists('groups');
         Schema::dropIfExists('migrations');
@@ -58,7 +71,7 @@ class AppCommand extends Command
         Schema::dropIfExists('photo_galleries');
         Schema::dropIfExists('settings');
         Schema::dropIfExists('sliders');
-        Schema::dropIfExists('tags');
+
         Schema::dropIfExists('activations');
         Schema::dropIfExists('persistences');
         Schema::dropIfExists('reminders');
@@ -69,9 +82,38 @@ class AppCommand extends Command
         Schema::dropIfExists('menus');
         Schema::dropIfExists('maillist');
         Schema::dropIfExists('faqs');
+
         Schema::dropIfExists('projects');
+        Schema::dropIfExists('userinfo');
         Schema::dropIfExists('videos');
         Schema::dropIfExists('logs');
+        Schema::dropIfExists('userinfo');
+
+        Schema::dropIfExists('products');
+
+        Schema::dropIfExists('categories');
+        Schema::dropIfExists('category_product');
+        Schema::dropIfExists('sub_categories');
+        Schema::dropIfExists('sections');
+
+        Schema::dropIfExists('product_features');
+        Schema::dropIfExists('product_variants');
+        Schema::dropIfExists('product_album');
+        Schema::dropIfExists('option_values');
+        Schema::dropIfExists('options');
+
+        Schema::dropIfExists('paypal');
+        Schema::dropIfExists('reviews');
+        Schema::dropIfExists('seo');
+        Schema::dropIfExists('coupons');
+        Schema::dropIfExists('cart');
+        Schema::dropIfExists('datalayer');
+
+        Schema::dropIfExists('messages');
+        Schema::dropIfExists('payment');
+        Schema::dropIfExists('orders');
+        Schema::dropIfExists('order_product');
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 
         $this->comment('=====================================');
         $this->comment('');
@@ -85,6 +127,7 @@ class AppCommand extends Command
         $this->comment('');
 
         // Let's ask the user some questions, shall we?
+//        $this->askUsername();
         $this->askUserFirstName();
         $this->askUserLastName();
         $this->askUserEmail();
@@ -118,14 +161,35 @@ class AppCommand extends Command
     }
 
     /**
+     * Asks the user for the username.
+     */
+    protected function askUsername()
+    {
+        do {
+            // Ask the user to input the first name
+//            $username = $this->ask('Please enter your username: ');
+            $username = "phillipmadsen";
+            // Check if the username is valid
+            if ($username == '') {
+                // Return an error message
+                $this->error('Your username is invalid. Please try again.');
+            }
+
+            // Store the user username
+            $this->userData['username'] = $username;
+            $this->info('    UserName is '. $username);
+        } while (!$username);
+    }
+
+    /**
      * Asks the user for the first name.
      */
     protected function askUserFirstName()
     {
         do {
             // Ask the user to input the first name
-            $first_name = $this->ask('Please enter your first name: ');
-
+            //$first_name = $this->ask('Please enter your first name: ');
+            $first_name = "phillip";
             // Check if the first name is valid
             if ($first_name == '') {
                 // Return an error message
@@ -134,8 +198,12 @@ class AppCommand extends Command
 
             // Store the user first name
             $this->userData['first_name'] = $first_name;
+            $this->info('    First Name is '. $first_name);
         } while (!$first_name);
     }
+
+
+
 
     /**
      * Asks the user for the last name.
@@ -144,7 +212,8 @@ class AppCommand extends Command
     {
         do {
             // Ask the user to input the last name
-            $last_name = $this->ask('Please enter your last name: ');
+           // $last_name = $this->ask('Please enter your last name: ');
+            $last_name = 'madsen';
 
             // Check if the last name is valid.
             if ($last_name == '') {
@@ -154,6 +223,7 @@ class AppCommand extends Command
 
             // Store the user last name
             $this->userData['last_name'] = $last_name;
+            $this->info('    Last Name is '. $last_name);
         } while (!$last_name);
     }
 
@@ -164,8 +234,8 @@ class AppCommand extends Command
     {
         do {
             // Ask the user to input the email address
-            $email = $this->ask('Please enter your user email: ');
-
+          //  $email = $this->ask('Please enter your user email: ');
+            $email = 'pmadsen2013@gmail.com';
             // Check if email is valid
             if ($email == '') {
                 // Return an error message
@@ -174,6 +244,7 @@ class AppCommand extends Command
 
             // Store the email address
             $this->userData['email'] = $email;
+            $this->info('    Email is '. $email);
         } while (!$email);
     }
 
@@ -184,8 +255,8 @@ class AppCommand extends Command
     {
         do {
             // Ask the user to input the user password
-            $password = $this->ask('Please enter your user password: ');
-
+         //   $password = $this->ask('Please enter your user password: ');
+            $password = bcrypt('mad15696');
             // Check if email is valid
             if ($password == '') {
                 // Return an error message
@@ -194,6 +265,8 @@ class AppCommand extends Command
 
             // Store the password
             $this->userData['password'] = $password;
+            $this->info('    Password is saved');
+
         } while (!$password);
     }
 
@@ -207,6 +280,7 @@ class AppCommand extends Command
 
         // Create the user
         $this->sentinelCreateUser();
+
 
         // Create dummy user
         $this->sentinelCreateDummyUser();
@@ -226,6 +300,7 @@ class AppCommand extends Command
         // Show the success message.
         $this->comment('');
         $this->info('Admin group created successfully.');
+
     }
 
     /**
@@ -233,14 +308,35 @@ class AppCommand extends Command
      */
     protected function sentinelCreateUser()
     {
+
         // Prepare the user data array.
-        $data = array_merge($this->userData, array(
+        $data = array_merge($this->userData, [
+
             'activated' => 1,
-        ));
+            'isAdmin' => 1,
+            'last_login' => new \DateTime(),
+        ]);
 
         $user = Sentinel::registerAndActivate($data);
 
         $this->role->users()->attach($user);
+
+
+        $user = User::find(1);
+
+        $userinfo = UserInfo::create([
+            "user_id" => $user->id,
+            "photo" => "/content/admin/photos/profile.png"
+        ]);
+
+
+
+        Payment::create([
+            'stripe_publishable_key' => '',
+            'stripe_secret_key' => '',
+            'paypal_client_id' => '',
+            'paypal_secret' => ''
+        ]);
 
         // Show the success message
         $this->comment('');
@@ -253,10 +349,11 @@ class AppCommand extends Command
     protected function sentinelCreateDummyUser()
     {
         $user = Sentinel::registerAndActivate(array(
+
             'first_name' => 'Super',
             'last_name' => 'Admin',
-            'email' => 'admin@admin.com',
-            'password' => 'admin',
+            'email' => 'madsynn@gmail.com',
+            'password' => bcrypt('madadmin'),
             'activated' => 1,
         ));
 

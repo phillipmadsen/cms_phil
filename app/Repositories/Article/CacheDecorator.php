@@ -1,18 +1,18 @@
 <?php
 
-namespace Fully\Repositories\Article;
+namespace App\Repositories\Article;
 
-use Fully\Services\Cache\CacheInterface;
+use App\Services\Cache\CacheInterface;
 
 /**
  * Class CacheDecorator.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class CacheDecorator extends AbstractArticleDecorator
 {
     /**
-     * @var \Fully\Services\Cache\CacheInterface
+     * @var \App\Services\Cache\CacheInterface
      */
     protected $cache;
 

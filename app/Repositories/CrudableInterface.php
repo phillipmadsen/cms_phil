@@ -1,11 +1,11 @@
 <?php
 
-namespace Fully\Repositories;
+namespace App\Repositories;
 
 /**
  * Interface CrudableInterface.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 interface CrudableInterface
 {

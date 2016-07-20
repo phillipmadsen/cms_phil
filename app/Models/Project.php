@@ -1,16 +1,16 @@
 <?php
 
-namespace Fully\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Cviebrock\EloquentSluggable\SluggableInterface;
-use Fully\Interfaces\ModelInterface as ModelInterface;
+use App\Interfaces\ModelInterface as ModelInterface;
 
 /**
  * Class Project.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class Project extends Model implements ModelInterface, SluggableInterface
 {

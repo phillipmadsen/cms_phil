@@ -1,11 +1,11 @@
 <?php
 
-namespace Fully\Repositories\Video;
+namespace App\Repositories\Video;
 
 /**
  * Class AbstractVideoDecorator.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 abstract class AbstractVideoDecorator implements VideoInterface
 {

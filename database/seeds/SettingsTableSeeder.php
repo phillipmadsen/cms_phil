@@ -9,7 +9,9 @@ class SettingsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('settings')->truncate();
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        \DB::table('settings')->truncate();
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 
         $settings = array(
             'settings' => '{"site_title":"Fully CMS - Laravel 5 Multi Language Content Managment System","ga_code":"UA-61740707-1","meta_keywords":"Laravel 5 Multi Language Content Managment System","meta_description":"Laravel 5 Multi Language Content Managment System"}',
@@ -17,6 +19,6 @@ class SettingsTableSeeder extends Seeder
             'updated_at' => new DateTime(),
             'lang' => 'tr', );
 
-        DB::table('settings')->insert($settings);
+        \DB::table('settings')->insert($settings);
     }
 }

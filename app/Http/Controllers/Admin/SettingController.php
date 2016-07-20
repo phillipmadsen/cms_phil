@@ -1,18 +1,18 @@
 <?php
 
-namespace Fully\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin;
 
-use Fully\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Redirect;
 use View;
 use Input;
 use Flash;
-use Fully\Models\Setting;
+use App\Models\Setting;
 
 /**
  * Class SettingController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class SettingController extends Controller
 {

@@ -9,9 +9,11 @@ class FaqsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('faqs')->truncate();
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        \DB::table('faqs')->truncate();
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 
-        DB::table('faqs')->insert(array(
+        \DB::table('faqs')->insert(array(
             array(
                 'question' => 'Lorem ipsum dolor',
                 'answer' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',

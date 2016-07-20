@@ -1,11 +1,11 @@
 <?php
 
-namespace Fully\Services\Cache;
+namespace App\Services\Cache;
 
 /**
  * Class CacheInterface.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 interface CacheInterface
 {

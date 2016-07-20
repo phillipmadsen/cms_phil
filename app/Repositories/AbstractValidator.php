@@ -1,13 +1,13 @@
 <?php
 
-namespace Fully\Repositories;
+namespace App\Repositories;
 
 use Validator as V;
 
 /**
  * Class AbstractValidator.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 abstract class AbstractValidator
 {

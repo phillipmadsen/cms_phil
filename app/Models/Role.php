@@ -1,13 +1,13 @@
 <?php
 
-namespace Fully\Models;
+namespace App\Models;
 
 use Cartalyst\Sentinel\Roles\EloquentRole;
 
 /**
  * Class Role.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class Role extends EloquentRole
 {

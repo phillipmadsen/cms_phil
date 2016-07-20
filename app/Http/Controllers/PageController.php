@@ -1,14 +1,14 @@
 <?php
 
-namespace Fully\Http\Controllers;
+namespace App\Http\Controllers;
 
-use Fully\Repositories\Page\PageInterface;
-use Fully\Repositories\Page\PageRepository as Page;
+use App\Repositories\Page\PageInterface;
+use App\Repositories\Page\PageRepository as Page;
 
 /**
  * Class PageController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class PageController extends Controller
 {

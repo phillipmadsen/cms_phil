@@ -1,13 +1,13 @@
 <?php
 
-namespace Fully\Composers\Admin;
+namespace App\Composers\Admin;
 
-use Fully\Models\FormPost;
+use App\Models\FormPost;
 
 /**
  * Class MenuComposer.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class MenuComposer
 {

@@ -10,9 +10,11 @@ class NewsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('news')->truncate();
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        \DB::table('news')->truncate();
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 
-        DB::table('news')->insert(array(
+        \DB::table('news')->insert(array(
             array(
                 'title' => 'Nam consectetur ullamcorper leo',
                 'slug' => Str::slug('Nam consectetur ullamcorper leo'),

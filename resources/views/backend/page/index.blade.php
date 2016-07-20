@@ -1,12 +1,19 @@
-@extends('backend/layout/layout')
-@section('content')
-    <script type="text/javascript">
-        $(document).ready(function () {
+@extends('backend/layout/clip')
 
-            $('#notification').show().delay(4000).fadeOut(700);
+@section('topscripts')
+<link rel="stylesheet" href="{!! asset('/clip/assets/bootstrap/css/bootstrap-tagsinput.css') !!}" type="text/css" />
+<link rel="stylesheet" href="{!! asset('/clip/jasny-bootstrap/css/jasny-bootstrap.min.css') !!}" type="text/css" />
 
-            // publish settings
-            $(".publish").bind("click", function (e) {
+{!! HTML::script('ckeditor/ckeditor.js') !!}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#title").slug();
+
+
+        $('#notification').show().delay(4000).fadeOut(700);
+
+        // publish settings
+       $(".publish").bind("click", function (e) {
                 var id = $(this).attr('id');
                 e.preventDefault();
                 $.ajax({
@@ -27,93 +34,126 @@
                 })
             });
         });
-    </script>
-    <section class="content-header">
-        <h1> Page
-            <small> | Control Panel</small>
-        </h1>
-        <ol class="breadcrumb">
-            <li><a href="{!! URL::route('admin.dashboard') !!}">Dashboard</a></li>
-            <li class="active">Page</li>
-        </ol>
-    </section>
-    <br>
-    <br>
-    <div class="container">
-        <div class="col-lg-10">
-            @include('flash::message')
-            <br>
+</script>
+@endsection
 
-            <div class="pull-left">
-                <div class="btn-toolbar"><a href="{!! langRoute('admin.page.create') !!}" class="btn btn-primary">
-                        <span class="glyphicon glyphicon-plus"></span>&nbsp;Add Page </a></div>
+@section('pagetitle')
+    <div class="row">
+        <div class="col-sm-12">
+
+            <!-- start: PAGE TITLE & BREADCRUMB -->
+            <ol class="breadcrumb">
+            <li><a href="{!! url(getLang() . '/admin') !!}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li class="active">Pages</li>
+            </ol>
+            <div class="page-header">
+                <h1> Page <small> | Control Panel</small> </h1>
             </div>
-            <br> <br> <br>
-            @if($pages->count())
+            <!-- end: PAGE TITLE & BREADCRUMB -->
+        </div>
+    </div>
+@endsection
+
+@section('content')
+ <div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="clip-stats"></i>
+                Panel Data
+                <div class="panel-tools">
+                    <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
+                    <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal"> <i class="fa fa-wrench"></i> </a>
+                    <a class="btn btn-xs btn-link panel-refresh" href="#"> <i class="fa fa-refresh"></i> </a>
+                    <a class="btn btn-xs btn-link panel-close" href="#"> <i class="fa fa-times"></i> </a>
+                </div>
+            </div>
+            <div class="panel-body">
+                @include('flash::message')
+                <div class="space12">
+                    <div class="btn-group btn-group-lg">
+                        <a class="btn btn-default active" href="javascript:;">
+                        Pages
+                        </a>
+                        <a class="btn btn-default hidden-xs" href="{!! langRoute('admin.page.create') !!}">
+                        <i class="fa fa-plus"></i> Add Page
+                        </a>
+                    </div>
+                </div>
+
+
+
+                 @if($pages->count())
                 <div class="">
                     <table class="table table-striped">
                         <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Created Date</th>
-                            <th>Updated Date</th>
-                            <th>Action</th>
-                            <th>Settings</th>
-                        </tr>
+                            <tr>
+                                <th>Title</th>
+                                {{-- <th>Created Date</th> --}}
+                                <th>Updated Date</th>
+                                <th>Action</th>
+                                <th>Settings</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        @foreach( $pages as $page )
+                            @foreach( $pages as $page )
                             <tr>
-                                <td> {!! link_to_route(getLang(). '.admin.page.show', $page->title, $page->id, array(
-                                    'class' => 'btn btn-link btn-xs' )) !!}
+                            {{--     <td> {!! link_to_route(getLang(). '.admin.page.show', $page->title, $page->id, ['class' => 'btn btn-link btn-xs' ]) !!}
+                                </td> --}}
+
+                                       <td>
+                                    <a href="{!! langRoute('admin.page.edit', array($page->id)) !!}" class="btn btn-link btn-xs">
+                                        {!! $page->title !!} </a>
                                 </td>
-                                <td>{!! $page->created_at !!}</td>
+                                {{-- <td>{!! $page->created_at !!}</td> --}}
                                 <td>{!! $page->updated_at !!}</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-danger dropdown-toggle" data-toggle="dropdown" href="#">
-                                            Action <span class="caret"></span> </a>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <a href="{!! langRoute('admin.page.show', array($page->id)) !!}">
-                                                    <span class="glyphicon glyphicon-eye-open"></span>&nbsp;Show Page
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{!! langRoute('admin.page.edit', array($page->id)) !!}">
-                                                    <span class="glyphicon glyphicon-edit"></span>&nbsp;Edit Page </a>
-                                            </li>
-                                            <li class="divider"></li>
-                                            <li>
-                                                <a href="{!! URL::route('admin.page.delete', array($page->id)) !!}">
-                                                    <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Delete
-                                                    Page </a>
-                                            </li>
-                                            <li class="divider"></li>
-                                            <li>
-                                                <a target="_blank" href="{!! URL::route('dashboard.page.show', ['slug' => $page->slug]) !!}">
-                                                    <span class="glyphicon glyphicon-eye-open"></span>&nbsp;View On Site
-                                                </a>
-                                            </li>
-                                        </ul>
+                                <td class="center">
+                                    <div class="visible-md visible-lg hidden-sm hidden-xs">
+                                        <a href="{!! langRoute('admin.page.edit', array($page->id)) !!}" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i> </a>
+                                        <a target="_blank" href="{!! langRoute('admin.page.show', array($page->id)) !!}" class="btn btn-xs btn-green tooltips" data-placement="top" data-original-title="Preview"><i class="fa fa-share"></i> </a>
+                                        <a target="_blank" href="{!! URL::route('dashboard.page.show', ['slug' => $page->slug]) !!}" class="btn btn-xs btn-red tooltips"  data-placement="top" data-original-title="Preview on Site"> <i class="fa fa-eye"></i> </a>
+                                        <a href="{!! URL::route('admin.page.delete', array($page->id)) !!}" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i> </a>
                                     </div>
                                 </td>
                                 <td>
                                     <a href="#" id="{!! $page->id !!}" class="publish"><img id="publish-image-{!! $page->id !!}" src="{!!url('/')!!}/assets/images/{!! ($page->is_published) ? 'publish.png' : 'not_publish.png'  !!}"/></a>
                                 </td>
                             </tr>
-                        @endforeach
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
-            @else
+                @else
                 <div class="alert alert-danger">No results found</div>
-            @endif
-        </div>
-        <div class="pull-left">
-            <ul class="pagination">
-                {!! $pages->render() !!}
-            </ul>
+                @endif
+            </div>
+            <div class="pull-left">
+                <ul class="pagination">
+                    {!! $pages->render() !!}
+                </ul>
+            </div>
+
+
+
+
+
         </div>
     </div>
-@stop
+</div>
+
+
+
+@endsection
+
+
+@section('bottomscripts')
+
+    <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+
+    <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+@endsection
+
+@section('clipinline')
+
+TableData.init();
+@endsection

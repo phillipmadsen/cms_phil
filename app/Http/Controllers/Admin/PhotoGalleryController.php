@@ -1,6 +1,6 @@
 <?php
 
-namespace Fully\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin;
 
 use View;
 use File;
@@ -8,16 +8,16 @@ use Flash;
 use Input;
 use Redirect;
 use Response;
-use Fully\Services\Pagination;
-use Fully\Http\Controllers\Controller;
-use Fully\Exceptions\Validation\ValidationException;
-use Fully\Repositories\PhotoGallery\PhotoGalleryInterface;
-use Fully\Repositories\PhotoGallery\PhotoGalleryRepository as PhotoGallery;
+use App\Services\Pagination;
+use App\Http\Controllers\Controller;
+use App\Exceptions\Validation\ValidationException;
+use App\Repositories\PhotoGallery\PhotoGalleryInterface;
+use App\Repositories\PhotoGallery\PhotoGalleryRepository as PhotoGallery;
 
 /**
  * Class PhotoGalleryController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class PhotoGalleryController extends Controller
 {

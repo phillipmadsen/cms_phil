@@ -1,13 +1,13 @@
 <?php
 
-namespace Fully\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin;
 
-use Fully\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use View;
 use Validator;
 use Redirect;
 use Input;
-use Fully\Models\Menu;
+use App\Models\Menu;
 use URL;
 use Exception;
 use Response;
@@ -16,7 +16,7 @@ use Flash;
 /**
  * Class MenuController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class MenuController extends Controller
 {

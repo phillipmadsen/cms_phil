@@ -1,11 +1,11 @@
 <?php
 
-namespace Fully\Repositories\Tag;
+namespace App\Repositories\Tag;
 
 /**
  * Class AbstractTagDecorator.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 abstract class AbstractTagDecorator implements TagInterface
 {

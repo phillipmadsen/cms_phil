@@ -1,14 +1,14 @@
 <?php
 
-namespace Fully\Repositories\Tag;
+namespace App\Repositories\Tag;
 
 use Config;
-use Fully\Models\Tag;
+use App\Models\Tag;
 
 /**
  * Class TagRepository.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class TagRepository implements TagInterface
 {

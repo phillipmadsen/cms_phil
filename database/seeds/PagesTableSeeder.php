@@ -10,7 +10,10 @@ class PagesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('pages')->truncate();
+
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        \DB::table('pages')->truncate();
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 
         $article = array(
             array(
@@ -30,6 +33,6 @@ class PagesTableSeeder extends Seeder
                 'is_published' => true,
                 'lang' => 'en', ), );
 
-        DB::table('pages')->insert($article);
+        \DB::table('pages')->insert($article);
     }
 }

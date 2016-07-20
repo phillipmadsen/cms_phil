@@ -1,11 +1,11 @@
 <?php
 
-namespace Fully\Repositories\Page;
+namespace App\Repositories\Page;
 
 /**
  * Class AbstractPageDecorator.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 abstract class AbstractPageDecorator implements PageInterface
 {

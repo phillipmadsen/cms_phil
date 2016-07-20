@@ -1,21 +1,21 @@
 <?php
 
-namespace Fully\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
 use View;
-use Fully\Services\Pagination;
-use Fully\Repositories\Tag\TagInterface;
-use Fully\Repositories\Article\ArticleInterface;
-use Fully\Repositories\Tag\TagRepository as Tag;
-use Fully\Repositories\Category\CategoryInterface;
-use Fully\Repositories\Category\CategoryRepository as Category;
+use App\Services\Pagination;
+use App\Repositories\Tag\TagInterface;
+use App\Repositories\Article\ArticleInterface;
+use App\Repositories\Tag\TagRepository as Tag;
+use App\Repositories\Category\CategoryInterface;
+use App\Repositories\Category\CategoryRepository as Category;
 
 /**
  * Class ArticleController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class ArticleController extends Controller
 {
@@ -60,7 +60,7 @@ class ArticleController extends Controller
         $article = $this->article->getBySlug($slug);
 
         if ($article == null) {
-            return Response::view('errors.missing', [], 404);
+           // return Response::view('errors.missing', [], 404);
         }
 
         View::composer('frontend/layout/layout', function ($view) use ($article) {

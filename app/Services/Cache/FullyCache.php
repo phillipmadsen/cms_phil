@@ -1,15 +1,15 @@
 <?php
 
-namespace Fully\Services\Cache;
+namespace App\Services\Cache;
 
 use Config;
 use Illuminate\Cache\CacheManager;
-use Fully\Services\Cache\CacheInterface;
+use App\Services\Cache\CacheInterface;
 
 /**
  * Class FullyCache.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class FullyCache implements CacheInterface
 {

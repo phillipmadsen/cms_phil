@@ -1,13 +1,13 @@
 <?php
 
-namespace Fully\Http\Controllers;
+namespace App\Http\Controllers;
 
-use Fully\Repositories\Faq\FaqInterface;
+use App\Repositories\Faq\FaqInterface;
 
 /**
  * Class FaqController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class FaqController extends Controller
 {

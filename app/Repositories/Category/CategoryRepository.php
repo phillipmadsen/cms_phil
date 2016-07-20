@@ -1,17 +1,17 @@
 <?php
 
-namespace Fully\Repositories\Category;
+namespace App\Repositories\Category;
 
 use Config;
-use Fully\Models\Category;
-use Fully\Repositories\RepositoryAbstract;
-use Fully\Repositories\CrudableInterface;
-use Fully\Exceptions\Validation\ValidationException;
+use App\Models\Category;
+use App\Repositories\RepositoryAbstract;
+use App\Repositories\CrudableInterface;
+use App\Exceptions\Validation\ValidationException;
 
 /**
  * Class CategoryRepository.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class CategoryRepository extends RepositoryAbstract implements CategoryInterface, CrudableInterface
 {
@@ -108,7 +108,7 @@ class CategoryRepository extends RepositoryAbstract implements CategoryInterface
      *
      * @return bool|mixed
      *
-     * @throws \Fully\Exceptions\Validation\ValidationException
+     * @throws \App\Exceptions\Validation\ValidationException
      */
     public function create($attributes)
     {
@@ -128,7 +128,7 @@ class CategoryRepository extends RepositoryAbstract implements CategoryInterface
      *
      * @return bool|mixed
      *
-     * @throws \Fully\Exceptions\Validation\ValidationException
+     * @throws \App\Exceptions\Validation\ValidationException
      */
     public function update($id, $attributes)
     {

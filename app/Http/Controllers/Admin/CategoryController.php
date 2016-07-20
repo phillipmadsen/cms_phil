@@ -1,20 +1,20 @@
 <?php
 
-namespace Fully\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin;
 
 use View;
 use Input;
 use Flash;
-use Fully\Services\Pagination;
-use Fully\Http\Controllers\Controller;
-use Fully\Repositories\Category\CategoryInterface;
-use Fully\Exceptions\Validation\ValidationException;
-use Fully\Repositories\Category\CategoryRepository as Category;
+use App\Services\Pagination;
+use App\Http\Controllers\Controller;
+use App\Repositories\Category\CategoryInterface;
+use App\Exceptions\Validation\ValidationException;
+use App\Repositories\Category\CategoryRepository as Category;
 
 /**
  * Class CategoryController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class CategoryController extends Controller
 {

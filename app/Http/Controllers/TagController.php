@@ -1,15 +1,15 @@
 <?php
 
-namespace Fully\Http\Controllers;
+namespace App\Http\Controllers;
 
-use Fully\Repositories\Tag\TagInterface;
-use Fully\Repositories\Tag\TagRepository as Tag;
-use Fully\Repositories\Category\CategoryInterface;
+use App\Repositories\Tag\TagInterface;
+use App\Repositories\Tag\TagRepository as Tag;
+use App\Repositories\Category\CategoryInterface;
 
 /**
  * Class TagController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class TagController extends Controller
 {

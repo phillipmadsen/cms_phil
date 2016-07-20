@@ -1,13 +1,13 @@
 <?php
 
-namespace Fully\Feeder\Facade;
+namespace App\Feeder\Facade;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * Class Feeder.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class Feeder extends Facade
 {

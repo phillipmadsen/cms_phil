@@ -1,13 +1,13 @@
 <?php
 
-namespace Fully\Repositories\News;
+namespace App\Repositories\News;
 
-use Fully\Repositories\RepositoryInterface;
+use App\Repositories\RepositoryInterface;
 
 /**
  * Interface NewsInterface.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 interface NewsInterface extends RepositoryInterface
 {

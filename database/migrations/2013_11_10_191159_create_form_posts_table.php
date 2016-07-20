@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateFormPostsTable extends Migration
@@ -9,7 +10,7 @@ class CreateFormPostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('form_posts', function ($table) {
+        Schema::create('form_posts', function (Blueprint $table) {
 
             $table->increments('id');
             $table->string('sender_name_surname', 255);
@@ -21,6 +22,7 @@ class CreateFormPostsTable extends Migration
             $table->boolean('is_answered')->default(false);
             $table->timestamps();
             $table->string('lang', 20);
+            $table->engine = 'InnoDB';
         });
     }
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace Fully\Repositories\Video;
+namespace App\Repositories\Video;
 
-use Fully\Repositories\RepositoryInterface;
+use App\Repositories\RepositoryInterface;
 
 /**
  * Interface VideoInterface.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 interface VideoInterface extends RepositoryInterface
 {

@@ -1,17 +1,17 @@
 <?php
 
-namespace Fully\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Fully\Services\Pagination;
-use Fully\Repositories\News\NewsInterface;
-use Fully\Repositories\News\NewsRepository as News;
+use App\Services\Pagination;
+use App\Repositories\News\NewsInterface;
+use App\Repositories\News\NewsRepository as News;
 
 /**
  * Class NewsController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class NewsController extends Controller
 {

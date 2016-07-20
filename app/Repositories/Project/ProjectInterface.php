@@ -1,13 +1,13 @@
 <?php
 
-namespace Fully\Repositories\Project;
+namespace App\Repositories\Project;
 
-use Fully\Repositories\RepositoryInterface;
+use App\Repositories\RepositoryInterface;
 
 /**
  * Interface ProjectInterface.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 interface ProjectInterface extends RepositoryInterface
 {

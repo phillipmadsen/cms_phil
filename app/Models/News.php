@@ -1,15 +1,15 @@
 <?php
 
-namespace Fully\Models;
+namespace App\Models;
 
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Cviebrock\EloquentSluggable\SluggableInterface;
-use Fully\Interfaces\ModelInterface as ModelInterface;
+use App\Interfaces\ModelInterface as ModelInterface;
 
 /**
  * Class News.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class News extends BaseModel implements ModelInterface, SluggableInterface
 {

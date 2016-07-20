@@ -10,8 +10,9 @@ class PhotoGalleriesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('photo_galleries')->truncate();
-
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        \DB::table('photo_galleries')->truncate();
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 1');
         $article = array(
             'title' => 'Fotoğraf Galerisi',
             'slug' => Str::slug('Fotoğraf Galerisi'),
@@ -21,6 +22,6 @@ class PhotoGalleriesTableSeeder extends Seeder
             'is_published' => true,
             'lang' => 'tr', );
 
-        DB::table('photo_galleries')->insert($article);
+        \DB::table('photo_galleries')->insert($article);
     }
 }

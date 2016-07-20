@@ -1,20 +1,20 @@
 <?php
 
-namespace Fully\Repositories\News;
+namespace App\Repositories\News;
 
 use Config;
-use Fully\Models\News;
+use App\Models\News;
 use Response;
 use Image;
 use File;
-use Fully\Repositories\RepositoryAbstract;
-use Fully\Repositories\CrudableInterface;
-use Fully\Exceptions\Validation\ValidationException;
+use App\Repositories\RepositoryAbstract;
+use App\Repositories\CrudableInterface;
+use App\Exceptions\Validation\ValidationException;
 
 /**
  * Class NewsRepository.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class NewsRepository extends RepositoryAbstract implements NewsInterface, CrudableInterface
 {
@@ -153,7 +153,7 @@ class NewsRepository extends RepositoryAbstract implements NewsInterface, Crudab
      *
      * @return bool|mixed
      *
-     * @throws \Fully\Exceptions\Validation\ValidationException
+     * @throws \App\Exceptions\Validation\ValidationException
      */
     public function create($attributes)
     {
@@ -206,7 +206,7 @@ class NewsRepository extends RepositoryAbstract implements NewsInterface, Crudab
      *
      * @return bool|mixed
      *
-     * @throws \Fully\Exceptions\Validation\ValidationException
+     * @throws \App\Exceptions\Validation\ValidationException
      */
     public function update($id, $attributes)
     {

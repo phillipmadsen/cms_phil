@@ -1,13 +1,13 @@
 <?php
 
-namespace Fully\Repositories\Category;
+namespace App\Repositories\Category;
 
-use Fully\Repositories\RepositoryInterface;
+use App\Repositories\RepositoryInterface;
 
 /**
  * Interface CategoryInterface.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 interface CategoryInterface extends RepositoryInterface
 {

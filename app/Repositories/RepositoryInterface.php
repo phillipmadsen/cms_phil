@@ -1,11 +1,11 @@
 <?php
 
-namespace Fully\Repositories;
+namespace App\Repositories;
 
 /**
  * Class RepositoryInterface.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 interface RepositoryInterface
 {

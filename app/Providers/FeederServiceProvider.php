@@ -1,14 +1,14 @@
 <?php
 
-namespace Fully\Providers;
+namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Fully\Feeder\Feeder;
+use App\Feeder\Feeder;
 
 /**
  * Class FeederServiceProvider.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class FeederServiceProvider extends ServiceProvider
 {
@@ -17,6 +17,6 @@ class FeederServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('feeder', 'Fully\Feeder\Feeder');
+        $this->app->bind('feeder', 'App\Feeder\Feeder');
     }
 }

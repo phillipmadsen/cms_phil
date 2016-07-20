@@ -1,6 +1,6 @@
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-        <b>Version</b> 2.0
+        <b>Version</b> 1.0.0
     </div>
-    <strong>Copyright &copy; 2014-2015 <a href="#">fullycms</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2016 <a href="#">GRACEadmin</a>.</strong> All rights  reserved.
 </footer>

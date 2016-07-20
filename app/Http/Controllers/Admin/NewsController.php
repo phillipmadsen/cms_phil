@@ -1,21 +1,21 @@
 <?php
 
-namespace Fully\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin;
 
 use View;
 use Input;
 use Flash;
 use Response;
-use Fully\Services\Pagination;
-use Fully\Http\Controllers\Controller;
-use Fully\Repositories\News\NewsInterface;
-use Fully\Repositories\News\NewsRepository as News;
-use Fully\Exceptions\Validation\ValidationException;
+use App\Services\Pagination;
+use App\Http\Controllers\Controller;
+use App\Repositories\News\NewsInterface;
+use App\Repositories\News\NewsRepository as News;
+use App\Exceptions\Validation\ValidationException;
 
 /**
  * Class NewsController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class NewsController extends Controller
 {

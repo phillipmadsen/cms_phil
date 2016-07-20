@@ -1,21 +1,21 @@
 <?php
 
-namespace Fully\Models;
+namespace App\Models;
 
 use URL;
 use Illuminate\Database\Eloquent\Model;
-use Fully\Repositories\Page\PageRepository;
-use Fully\Repositories\PhotoGallery\PhotoGalleryRepository;
+use App\Repositories\Page\PageRepository;
+use App\Repositories\PhotoGallery\PhotoGalleryRepository;
 
 /**
  * Class Menu.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class Menu extends Model
 {
     public $table = 'menus';
-    protected $fillable = ['title', 'url', 'order', 'type', 'selected'];
+    protected $fillable = ['title', 'url', 'order', 'type', 'selected', 'icon_class'];
 
     public function getMaxOrder()
     {
@@ -103,24 +103,34 @@ class Menu extends Model
         $pageOpts = $page->lists();
 
         foreach ($pageOpts as $k => $v) {
-            $opts['Page']['Fully\Models\Page-'.$k] = $v;
+            $opts['Page']['App\Models\Page-'.$k] = $v;
         }
 
         $photoGallery = new PhotoGalleryRepository(new PhotoGallery());
         $photoGalleryOpts = $photoGallery->lists();
 
         foreach ($photoGalleryOpts as $k => $v) {
-            $opts['PhotoGallery']['Fully\Models\PhotoGallery-'.$k] = $v;
+            $opts['PhotoGallery']['App\Models\PhotoGallery-'.$k] = $v;
         }
 
         $menuOptions = array(
             'General' => array(
-                'home' => 'Home',
-                'news' => 'News',
-                'blog' => 'Blog',
-                'project' => 'Project',
-                'faq' => 'Faq',
-                'contact' => 'Contact', ),
+            'home' => 'Home',
+            'automation' => 'Automation',
+            'blog' => 'Blog',
+            'contact' => 'Contact',
+            'events' => 'Events',
+            'faq' => 'Faq',
+            'hand-quilting' => 'Hand Quilting',
+            'machine-frames' => 'Machine Frames',
+            'news' => 'News',
+            'project' => 'Project',
+            'community' => 'Community',
+            'qnique' => 'Qnique',
+            'sewing-machines' => 'Sewing Machines',
+            'shop' => 'Shop',
+            'truecut' => 'True Cut',
+            'videos' => 'Videos', ),
             'Page' => (isset($opts['Page']) ? $opts['Page'] : array()),
             'Photo Gallery' => (isset($opts['PhotoGallery']) ? $opts['PhotoGallery'] : array()), );
 
@@ -133,28 +143,24 @@ class Menu extends Model
 
         switch ($option) {
 
-            case 'home':
-                $url = '/';
-                break;
-            case 'news':
-                $url = '/news';
-                break;
-            case 'blog':
-                $url = '/article';
-                break;
-            case 'project':
-                $url = '/project';
-                break;
-            case 'faq':
-                $url = '/faq';
-                break;
-            case 'contact':
-                $url = '/contact';
-                break;
-            default:
-                $url = $this->getModuleUrl($option);
-                break;
-        }
+            case 'home':                $url = "/";                             break;
+            case 'automation':          $url = "/automation/qct";               break;
+            case 'blog':                $url = '/community/blog';               break;
+            case 'contact':             $url = '/contact';                      break;
+            case 'events':              $url = "/community/events";             break;
+            case 'faq':                 $url = '/community/faq';                break;
+            case 'hand-quilting':       $url = "/hand-quilting";                break;
+            case 'machine-frames':      $url = "/machine-frames";               break;
+            case 'news':                $url = '/community/news';               break;
+            case 'project':             $url = '/community/project';            break;
+            case 'qnique':              $url = "/sewing-machines/qnique";       break;
+            case 'community':           $url = "/community";                    break;
+            case 'sewing-machines':     $url = "/sewing-machines/qnique";       break;
+            case 'shop':                $url = "/shop";                         break;
+            case 'truecut':             $url = "/truecut";                      break;
+            case 'videos':              $url = "/community/videos";             break;
+
+            default: $url = $this->getModuleUrl($option); break; }
 
         $url = '/'.getLang().'/'.ltrim($url, '/');
 
@@ -171,26 +177,39 @@ class Menu extends Model
 
         return $module->url;
     }
-
-    public function generateFrontMenu($menu, $parentId = 0, $starter = false)
+	/**
+	 * @param      $menu
+	 * @param int  $parentId
+	 * @param bool $starter
+	 *
+	 * @return null|string
+	 */
+	public function generateFrontMenu($menu, $parentId = 0, $starter = false)
     {
         $result = null;
 
-        foreach ($menu as $item) {
-            if ($item->parent_id == $parentId) {
-                $childItem = $this->hasChildItems($item->id);
+    foreach ($menu as $item)
+    {
+        if ($item->parent_id == $parentId)
+        {
+            $childItem = $this->hasChildItems($item->id);
 
-                $result .= "<li class='menu-item ".(($childItem) ? 'dropdown' : null).(($childItem && $item->parent_id != 0) ? ' dropdown-submenu' : null)."'>
-                                <a href='".url($item->url)."' ".(($childItem) ? 'class="dropdown-toggle" data-toggle="dropdown"' : null).">{$item->title}".(($childItem && $item->parent_id == 0) ? '<b class="caret"></b>' : null).'</a>'.$this->generateFrontMenu($menu, $item->id).'
-                            </li>';
+            $result .= "<li class='menu-item " . (($childItem) ? 'dropdown' : null) . (($childItem && $item->parent_id != 0) ? ' dropdown-submenu' : null) . "'>";
+            $result .= "<a href='" . url($item->url) . "' " . (($childItem) ? 'class="dropdown-toggle" data-toggle="dropdown"' : null) . '>';
+            if ($item->icon_class !== '')
+            {
+                $result .= "<i class='fa " . $item->icon_class . "'></i>";
             }
+            $result .= '<span>' . $item->title . '</span>';
+            $result .= (($childItem && $item->parent_id == 0) ? '<b class="caret"></b>' : null) . '</a>' . $this->generateFrontMenu($menu, $item->id) . '</li>';
         }
+    }
 
-        return $result ? "\n<ul class='".(($starter) ? ' nav navbar-nav navbar-right ' : null).((!$starter) ? ' dropdown-menu ' : null)."'>\n$result</ul>\n" : null;
+    return $result ? "\n<ul class='".(($starter) ? ' nav navbar-nav navbar-right ' : null).((!$starter) ? ' dropdown-menu ' : null)."'>\n$result</ul>\n" : null;
     }
 
     public function getFrontMenuHTML($items)
     {
-        return $this->generateFrontMenu($items, 0, true);
+        return $this->generateFrontMenu($items, 2, true);
     }
 }

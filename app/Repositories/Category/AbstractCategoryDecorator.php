@@ -1,11 +1,11 @@
 <?php
 
-namespace Fully\Repositories\Category;
+namespace App\Repositories\Category;
 
 /**
  * Class AbstractCategoryDecorator.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 abstract class AbstractCategoryDecorator implements CategoryInterface
 {

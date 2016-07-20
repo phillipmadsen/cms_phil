@@ -1,22 +1,55 @@
 <?php
 
-namespace Fully\Models;
+namespace App\Models;
 
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Cviebrock\EloquentSluggable\SluggableInterface;
-use Fully\Interfaces\ModelInterface as ModelInterface;
+use App\Interfaces\ModelInterface as ModelInterface;
 
 /**
  * Class Page.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class Page extends BaseModel implements ModelInterface, SluggableInterface
 {
     use SluggableTrait;
 
     public $table = 'pages';
-    protected $fillable = ['title', 'content', 'is_published'];
+
+    public $fillable = [
+        'is_published',
+        'is_draft',
+        'has_product_link',
+        'product_link_nofollow',
+        'layout',
+        'title',
+        'page_title'
+        'page_name',
+        'page_source',
+        'subtitle',
+        'excerpt',
+        'content',
+        'slug',
+        'meta_title',
+        'meta_keywords',
+        'meta_description',
+        'fb_title',
+        'gp_title',
+        'tw_title',
+        'link_to_product_title',
+        'link_to_product',
+        'path',
+        'file_name',
+        'file_size',
+        'lang',
+        'author',
+        'section_id',
+        'published_at',
+        'added_on'
+    ];
+
+
     protected $appends = ['url'];
 
     protected $sluggable = array(
@@ -31,6 +64,8 @@ class Page extends BaseModel implements ModelInterface, SluggableInterface
 
     public function getUrlAttribute()
     {
-        return 'page/'.$this->attributes['slug'];
+         return "/" . $this->attributes['slug'];
     }
+
+
 }

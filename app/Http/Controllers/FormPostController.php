@@ -1,18 +1,18 @@
 <?php
 
-namespace Fully\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Fully\Services\Mailer;
-use Fully\Models\FormPost;
+use App\Services\Mailer;
+use App\Models\FormPost;
 use Validator;
 use Redirect;
 
 /**
  * Class FormPostController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class FormPostController extends Controller
 {

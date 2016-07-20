@@ -1,13 +1,13 @@
 <?php
 
-namespace Fully\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Photo.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class Photo extends Model
 {
@@ -16,11 +16,11 @@ class Photo extends Model
 
     public function slider()
     {
-        return $this->morphTo('Fully\Models\Slider', 'relationship');
+        return $this->morphTo('App\Models\Slider', 'relationship');
     }
 
     public function photo_gallery()
     {
-        return $this->morphTo('Fully\Models\PhotoGallery', 'relationship');
+        return $this->morphTo('App\Models\PhotoGallery', 'relationship');
     }
 }

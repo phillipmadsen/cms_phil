@@ -1,19 +1,19 @@
 <?php
 
-namespace Fully\Composers;
+namespace App\Composers;
 
 use News;
-use Fully\Repositories\News\NewsInterface;
+use App\Repositories\News\NewsInterface;
 
 /**
  * Class MenuComposer.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class NewsComposer
 {
     /**
-     * @var \Fully\Repositories\News\NewsInterface
+     * @var \App\Repositories\News\NewsInterface
      */
     protected $news;
 

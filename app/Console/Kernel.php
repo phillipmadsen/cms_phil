@@ -1,6 +1,6 @@
 <?php
 
-namespace Fully\Console;
+namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -13,8 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        \Fully\Console\Commands\Inspire::class,
-        \Fully\Console\Commands\AppCommand::class,
+        \App\Console\Commands\Inspire::class,
+        \App\Console\Commands\AppCommand::class,
     ];
 
     /**

@@ -1,19 +1,19 @@
 <?php
 
-namespace Fully\Repositories\Project;
+namespace App\Repositories\Project;
 
 use Config;
-use Fully\Models\Project;
+use App\Models\Project;
 use Image;
 use File;
-use Fully\Repositories\RepositoryAbstract;
-use Fully\Repositories\CrudableInterface;
-use Fully\Exceptions\Validation\ValidationException;
+use App\Repositories\RepositoryAbstract;
+use App\Repositories\CrudableInterface;
+use App\Exceptions\Validation\ValidationException;
 
 /**
  * Class ProjectRepository.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class ProjectRepository extends RepositoryAbstract implements ProjectInterface, CrudableInterface
 {
@@ -136,7 +136,7 @@ class ProjectRepository extends RepositoryAbstract implements ProjectInterface, 
      *
      * @return bool|mixed
      *
-     * @throws \Fully\Exceptions\Validation\ValidationException
+     * @throws \App\Exceptions\Validation\ValidationException
      */
     public function create($attributes)
     {
@@ -192,7 +192,7 @@ class ProjectRepository extends RepositoryAbstract implements ProjectInterface, 
      *
      * @return bool|mixed
      *
-     * @throws \Fully\Exceptions\Validation\ValidationException
+     * @throws \App\Exceptions\Validation\ValidationException
      */
     public function update($id, $attributes)
     {

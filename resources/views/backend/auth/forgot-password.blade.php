@@ -7,7 +7,7 @@
     <!-- CSS are placed here -->
     {!! HTML::style('assets/bootstrap/css/backend_bootstrap.css') !!}
     {!! HTML::style('assets/bootstrap/css/signin.css') !!}
-    {!! HTML::style("assets/css/github-right.css") !!}
+  
     <style>
         body {
             background-color: #1b1b1b;
@@ -35,7 +35,7 @@
 <div class="container">
     <div class="row">
         <div style="text-align: center" class="col-md-4 col-md-offset-4">
-            <h1 style="color: #FFFFFF">Fully CMS</h1>
+            <h1 style="color: #FFFFFF"> CMS</h1>
 
             <div class="panel panel-default">
                 <div class="panel-body">

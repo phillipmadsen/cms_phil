@@ -1,16 +1,16 @@
 <?php
 
-namespace Fully\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Fully\Services\Pagination;
-use Fully\Repositories\Video\VideoInterface;
-use Fully\Repositories\Video\VideoRepository as Video;
+use App\Services\Pagination;
+use App\Repositories\Video\VideoInterface;
+use App\Repositories\Video\VideoRepository as Video;
 
 /**
  * Class VideoController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class VideoController extends Controller
 {

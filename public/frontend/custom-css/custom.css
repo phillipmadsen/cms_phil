@@ -1,0 +1,25 @@
+.toppadding-sm{padding-top:30px}
+.toppadding{padding-top:50px;}
+.bottompadding-sm{padding-bottom:30px}
+.bottompadding{padding-bottom:50px;}
+allpadding{padding:50px;}
+allpadding-sm{padding:30px;}
+.bgcolor-second{background-color:#B14949;}
+.col-centered{float:none;margin:0 auto;}
+.overlay-light{background-image:url('/images/grid-light.png');}
+.button-secondary{background-color:#B14949;}
+.button:hover,.button-full:hover{text-decoration:none;}
+.compare{background-color:#F9F9F9;padding:20px 15px 5px 15px;}
+.accent,.heading-block .accent{color:#B14949;}
+.accent-blue,.heading-block .accent-blue{color:#48A0C4;}
+.bg-accent{background-color:#B14949;}
+.topborder-sm{border-top:2px solid #B14949;}
+.bottomborder-sm{border-bottom:2px solid #B14949;}
+.line{border-top:2px solid #DDD;}
+.feature-box{padding:0 0 0 110px;}
+.feature-box.fbox-right{padding:0 110px 0 0;text-align:right;}
+#content .de-emph{font-size:.85em;line-height:normal;}
+#content p.de-emph{margin-bottom:10px;}
+.feature-box .fbox-icon{width:100px;height:100px;}
+.feature-box .fbox-icon img{background-color:transparent;border:1px solid #48A0C4;}
+#content .feature-box p{line-height:1.4;color:rgb(85,85,85);}

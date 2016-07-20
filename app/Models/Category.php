@@ -1,16 +1,16 @@
 <?php
 
-namespace Fully\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Cviebrock\EloquentSluggable\SluggableInterface;
-use Fully\Interfaces\ModelInterface as ModelInterface;
+use App\Interfaces\ModelInterface as ModelInterface;
 
 /**
  * Class Category.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class Category extends Model implements ModelInterface, SluggableInterface
 {
@@ -18,7 +18,8 @@ class Category extends Model implements ModelInterface, SluggableInterface
 
     public $table = 'categories';
     public $timestamps = false;
-    protected $fillable = ['title'];
+
+     protected $fillable = ['title', 'name','section_id', 'slug', 'lang'];
     protected $appends = ['url'];
 
     protected $sluggable = array(
@@ -26,9 +27,10 @@ class Category extends Model implements ModelInterface, SluggableInterface
         'save_to' => 'slug',
     );
 
-    public function articles()
+
+public function articles()
     {
-        return $this->hasMany('Fully\Models\Article');
+        return $this->hasMany(App\Models\Article::class);
     }
 
     public function setUrlAttribute($value)
@@ -39,5 +41,28 @@ class Category extends Model implements ModelInterface, SluggableInterface
     public function getUrlAttribute()
     {
         return 'category/'.$this->attributes['slug'];
+    }
+
+    /**
+     * Relationship with the product model.
+     *
+     * @author    Andrea Marco Sartori
+     * @return    Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+
+
+    public function products()
+    {
+        return $this->belongsToMany(App\Models\Product::class, 'category_product');
+    }
+
+    public function subcats()
+    {
+        return $this->hasMany(App\Models\SubCategory::class);
+    }
+
+    public function section()
+    {
+        return $this->belongsTo(App\Models\Section::class);
     }
 }

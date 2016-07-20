@@ -1,14 +1,14 @@
 <?php
 
-namespace Fully\Repositories\Setting;
+namespace App\Repositories\Setting;
 
-use Fully\Models\Setting;
-use Fully\Repositories\AbstractValidator as Validator;
+use App\Models\Setting;
+use App\Repositories\AbstractValidator as Validator;
 
 /**
  * Class SettingRepository.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class SettingRepository extends Validator implements SettingInterface
 {

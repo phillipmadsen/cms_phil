@@ -1,13 +1,13 @@
 <?php
 
-namespace Fully\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin;
 
-use Fully\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 /**
  * Class DashboardController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class DashboardController extends Controller
 {

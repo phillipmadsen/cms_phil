@@ -1,16 +1,16 @@
 <?php
 
-namespace Fully\Http\Controllers;
+namespace App\Http\Controllers;
 
-use Fully\Repositories\Project\ProjectInterface;
-use Fully\Repositories\Slider\SliderInterface;
-use Fully\Repositories\Tag\TagInterface;
+use App\Repositories\Project\ProjectInterface;
+use App\Repositories\Slider\SliderInterface;
+use App\Repositories\Tag\TagInterface;
 use LaravelLocalization;
 
 /**
  * Class HomeController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class HomeController extends Controller
 {
@@ -33,6 +33,6 @@ class HomeController extends Controller
         $projects = $this->project->all();
         $tags = $this->tag->all();
 
-        return view('frontend/layout/dashboard', compact('sliders', 'projects', 'languages', 'tags'));
+        return view('frontend/layout/homepage', compact('sliders', 'projects', 'languages', 'tags'));
     }
 }

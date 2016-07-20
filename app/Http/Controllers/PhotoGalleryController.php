@@ -1,15 +1,15 @@
 <?php
 
-namespace Fully\Http\Controllers;
+namespace App\Http\Controllers;
 
-use Fully\Repositories\PhotoGallery\PhotoGalleryRepository as PhotoGallery;
-use Fully\Repositories\PhotoGallery\PhotoGalleryInterface;
+use App\Repositories\PhotoGallery\PhotoGalleryRepository as PhotoGallery;
+use App\Repositories\PhotoGallery\PhotoGalleryInterface;
 use Response;
 
 /**
  * Class PhotoGalleryController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class PhotoGalleryController extends Controller
 {

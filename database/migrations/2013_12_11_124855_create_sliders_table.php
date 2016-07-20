@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateSlidersTable extends Migration
@@ -9,8 +10,7 @@ class CreateSlidersTable extends Migration
      */
     public function up()
     {
-        Schema::create('sliders', function ($table) {
-
+        Schema::create('sliders', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
             $table->text('description');
@@ -20,6 +20,7 @@ class CreateSlidersTable extends Migration
             $table->integer('order');
             $table->string('lang', 20);
             $table->timestamps();
+            $table->engine = 'InnoDB';
         });
     }
 

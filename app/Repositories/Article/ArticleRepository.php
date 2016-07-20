@@ -1,24 +1,24 @@
 <?php
 
-namespace Fully\Repositories\Article;
+namespace App\Repositories\Article;
 
-use Fully\Models\Article;
+use App\Models\Article;
 use Config;
 use Response;
-use Fully\Models\Tag;
-use Fully\Models\Category;
+use App\Models\Tag;
+use App\Models\Category;
 use Str;
 use Event;
 use Image;
 use File;
-use Fully\Repositories\RepositoryAbstract;
-use Fully\Repositories\CrudableInterface as CrudableInterface;
-use Fully\Exceptions\Validation\ValidationException;
+use App\Repositories\RepositoryAbstract;
+use App\Repositories\CrudableInterface as CrudableInterface;
+use App\Exceptions\Validation\ValidationException;
 
 /**
  * Class ArticleRepository.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class ArticleRepository extends RepositoryAbstract implements ArticleInterface, CrudableInterface
 {
@@ -149,7 +149,7 @@ class ArticleRepository extends RepositoryAbstract implements ArticleInterface, 
      *
      * @return bool|mixed
      *
-     * @throws \Fully\Exceptions\Validation\ValidationException
+     * @throws \App\Exceptions\Validation\ValidationException
      */
     public function create($attributes)
     {
@@ -189,13 +189,12 @@ class ArticleRepository extends RepositoryAbstract implements ArticleInterface, 
 
             //--------------------------------------------------------
 
-            $this->article->lang = $this->getLang();
-            if ($this->article->fill($attributes)->save()) {
-                $category = Category::find($attributes['category']);
-                $category->articles()->save($this->article);
-            }
-
-            $articleTags = explode(',', $attributes['tag']);
+	        $this->article->lang = $this->getLang();
+	        if ($this->article->fill($attributes)->save()) {
+		        $category = Category::find($attributes['category']);
+		        $category->articles()->save($this->article);
+	        }
+	        $articleTags = explode(',', $attributes['tag']);
 
             foreach ($articleTags as $articleTag) {
                 if (!$articleTag) {
@@ -230,10 +229,12 @@ class ArticleRepository extends RepositoryAbstract implements ArticleInterface, 
      *
      * @return bool|mixed
      *
-     * @throws \Fully\Exceptions\Validation\ValidationException
+     * @throws \App\Exceptions\Validation\ValidationException
      */
     public function update($id, $attributes)
     {
+
+
         $this->article = $this->find($id);
         $attributes['is_published'] = isset($attributes['is_published']) ? true : false;
 
@@ -269,15 +270,14 @@ class ArticleRepository extends RepositoryAbstract implements ArticleInterface, 
             }
             //-------------------------------------------------------
 
-            if ($this->article->fill($attributes)->save()) {
-                $this->article->resluggify();
-                $category = Category::find($attributes['category']);
-                $category->articles()->save($this->article);
-            }
+	        if ($this->article->fill($attributes)->save()) {
+		        $this->article->resluggify();
+		        $category = Category::find($attributes['category']);
+		        $category->articles()->save($this->article);
+	        }
+	        $articleTags = explode(',', $attributes['tag']);
 
-            $articleTags = explode(',', $attributes['tag']);
-
-            foreach ($articleTags as $articleTag) {
+	        foreach ($articleTags as $articleTag) {
                 if (!$articleTag) {
                     continue;
                 }
@@ -293,6 +293,8 @@ class ArticleRepository extends RepositoryAbstract implements ArticleInterface, 
                 //$tag->slug = Str::slug($articleTag);
                 $this->article->tags()->save($tag);
             }
+
+	        //dd($attributes);
 
             return true;
         }

@@ -1,18 +1,43 @@
-@extends('backend/layout/layout')
-@section('content')
-<!-- Content Header (Page header) -->
-<section class="content-header">
-    <h1> Role
-        <small> | Update Role</small>
-    </h1>
-    <ol class="breadcrumb">
+@extends('backend/layout/clip')
+
+@section('topscripts')
+ 
+
+@endsection
+
+@section('pagetitle')
+    <div class="row">
+        <div class="col-sm-12">
+            <!-- start: PAGE TITLE & BREADCRUMB -->
+            <ol class="breadcrumb">
         <li><a href="{!! url(getLang(). '/admin/role') !!}"><i class="fa fa-user"></i> Role</a></li>
         <li class="active">Update Role</li>
-    </ol>
-</section>
-<br>
-<br>
-<div class="container">
+            </ol>
+            <div class="page-header">
+                      <h1> Role <small> | Update Role</small> </h1>
+            </div>
+            <!-- end: PAGE TITLE & BREADCRUMB -->
+        </div>
+    </div>
+@endsection
+
+@section('content')
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="clip-stats"></i>
+                Panel Data
+                <div class="panel-tools">
+                    <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
+                    <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal"> <i class="fa fa-wrench"></i> </a>
+                    <a class="btn btn-xs btn-link panel-refresh" href="#"> <i class="fa fa-refresh"></i> </a>
+                    <a class="btn btn-xs btn-link panel-close" href="#"> <i class="fa fa-times"></i> </a>
+                </div>
+            </div>
+            <div class="panel-body">
     {!! Form::open( array( 'route' => array(getLang(). '.admin.role.update', $role->id), 'method' => 'PATCH')) !!}
     <!-- Role Name -->
     <div class="control-group {!! $errors->has('name') ? 'has-error' : '' !!}">
@@ -123,6 +148,11 @@
         &nbsp;Cancel
     </a>
     {!! Form::close() !!}
+             </div>
+        </div>
+    </div>
 </div>
+@endsection
 
-@stop
+@section('bottomscripts')@endsection
+@section('clipinline')@endsection

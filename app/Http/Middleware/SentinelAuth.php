@@ -1,6 +1,6 @@
 <?php
 
-namespace Fully\Http\Middleware;
+namespace App\Http\Middleware;
 
 use Closure;
 use Sentinel;
@@ -8,7 +8,7 @@ use Sentinel;
 /**
  * Class SentinelAuth.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class SentinelAuth
 {

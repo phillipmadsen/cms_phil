@@ -1,6 +1,6 @@
 <?php
 
-namespace Fully\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
@@ -11,7 +11,7 @@ use Redirect;
 /**
  * Class MaillistController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class MaillistController extends Controller
 {

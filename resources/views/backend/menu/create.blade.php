@@ -1,5 +1,6 @@
 @extends('backend/layout/layout')
-@section('content')
+
+@section('topscripts')
 <script type="text/javascript">
     $(document).ready(function () {
 
@@ -19,21 +20,46 @@
         $(".type").trigger("change");
     });
 </script>
-<!-- Content Header (Page header) -->
-<section class="content-header">
-    <h1> Menu <small> | Add Menu</small> </h1>
-    <ol class="breadcrumb">
+@endsection
+
+@section('pagetitle')
+    <div class="row">
+        <div class="col-sm-12">
+
+            <!-- start: PAGE TITLE & BREADCRUMB -->
+            <ol class="breadcrumb">
         <li><a href="{!! url(getLang(). '/admin/menu') !!}">Menu</a></li>
         <li class="active">Add Menu Item</li>
-    </ol>
-</section>
-<br>
-<br>
-<div class="container">
+            </ol>
+            <div class="page-header">
+                <h1> Menu <small> | Add Menu</small> </h1>
+            </div>
+            <!-- end: PAGE TITLE & BREADCRUMB -->
+        </div>
+    </div>
+@endsection
 
-    {!! Form::open(array('action' => '\Fully\Http\Controllers\Admin\MenuController@store')) !!}
+@section('content')
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="clip-stats"></i>
+                <div class="panel-tools">
+                    <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
+                    <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal"> <i class="fa fa-wrench"></i> </a>
+                    <a class="btn btn-xs btn-link panel-refresh" href="#"> <i class="fa fa-refresh"></i> </a>
+                    <a class="btn btn-xs btn-link panel-close" href="#"> <i class="fa fa-times"></i> </a>
+                </div>
+            </div>
+            <div class="panel-body">
+
+
+<div class="col-md-8">
+
+  {!! Form::open(array('action' => '\Fully\Http\Controllers\Admin\MenuController@store')) !!}
     <!-- Title -->
-    <div class="control-group {!! $errors->has('title') ? 'has-error' : '' !!}">
+    <div class="col-md-5 control-group {!! $errors->has('title') ? 'has-error' : '' !!}">
         <label class="control-label" for="title">Title</label>
 
         <div class="controls">
@@ -44,7 +70,7 @@
         </div>
         <br>
     </div>
-
+<div class="col-md-12">
     <!-- Type -->
     <label class="control-label" for="title">Type</label>
 
@@ -63,9 +89,9 @@
         </div>
         <br>
     </div>
-
+    </div>
     <!-- Modules -->
-    <div class="control-group {!! $errors->has('options') ? 'has-error' : '' !!} modules">
+    <div class="col-md-5 control-group {!! $errors->has('options') ? 'has-error' : '' !!} modules">
         <label class="control-label" for="title">Options</label>
 
         <div class="controls">
@@ -89,10 +115,33 @@
         </div>
     </div>
     <br>
+    <div class="col-md-12">
     <!-- Form actions -->
-    {!! Form::submit('Save Changes', array('class' => 'btn btn-success')) !!}
-
+    {!! Form::submit('Save Changes', array('class' => ' btn btn-success')) !!}
+</div>
     {!! Form::close() !!}
 
+
+
+
 </div>
-@stop
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('bottomscripts')
+        <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+
+        <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+@endsection
+
+@section('clipinline')
+
+TableData.init();
+@endsection

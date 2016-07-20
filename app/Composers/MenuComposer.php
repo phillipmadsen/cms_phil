@@ -1,19 +1,19 @@
 <?php
 
-namespace Fully\Composers;
+namespace App\Composers;
 
 use Menu;
-use Fully\Repositories\Menu\MenuInterface;
+use App\Repositories\Menu\MenuInterface;
 
 /**
  * Class MenuComposer.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class MenuComposer
 {
     /**
-     * @var \Fully\Repositories\Menu\MenuInterface
+     * @var \App\Repositories\Menu\MenuInterface
      */
     protected $menu;
 

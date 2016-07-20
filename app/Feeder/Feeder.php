@@ -1,11 +1,11 @@
 <?php
 
-namespace Fully\Feeder;
+namespace App\Feeder;
 
 /**
  * Class Feeder.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class Feeder
 {

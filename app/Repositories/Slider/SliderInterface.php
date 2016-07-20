@@ -1,11 +1,11 @@
 <?php
 
-namespace Fully\Repositories\Slider;
+namespace App\Repositories\Slider;
 
 /**
  * Interface SliderInterface.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 interface SliderInterface
 {

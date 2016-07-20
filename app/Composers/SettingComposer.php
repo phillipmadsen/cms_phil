@@ -1,19 +1,19 @@
 <?php
 
-namespace Fully\Composers;
+namespace App\Composers;
 
-use Fully\Models\Setting;
-use Fully\Repositories\Setting\SettingInterface;
+use App\Models\Setting;
+use App\Repositories\Setting\SettingInterface;
 
 /**
  * Class SettingComposer.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class SettingComposer
 {
     /**
-     * @var \Fully\Repositories\Setting\SettingInterface
+     * @var \App\Repositories\Setting\SettingInterface
      */
     protected $setting;
 

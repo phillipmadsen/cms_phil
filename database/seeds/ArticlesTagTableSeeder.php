@@ -9,9 +9,10 @@ class ArticlesTagsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('articles_tags')->truncate();
-
-        DB::table('articles_tags')->insert(array(
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        \DB::table('articles_tags')->truncate();
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+        \DB::table('articles_tags')->insert(array(
             array(
                 'article_id' => 1,
                 'tag_id' => 2,

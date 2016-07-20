@@ -1,14 +1,14 @@
 <?php
 
-namespace Fully\Repositories\Slider;
+namespace App\Repositories\Slider;
 
-use Fully\Models\Slider;
-use Fully\Repositories\AbstractValidator as Validator;
+use App\Models\Slider;
+use App\Repositories\AbstractValidator as Validator;
 
 /**
  * Class SliderRepository.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class SliderRepository extends Validator implements SliderInterface
 {

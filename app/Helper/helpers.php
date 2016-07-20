@@ -79,3 +79,16 @@ function langRedirectRoute($route)
 {
     return Redirect::route(getLang().'.'.$route);
 }
+
+
+function setSomeTimestampAttribute($dateTime)
+{
+  // parse param to get string 'Y-m-d H:i:s'
+  $dateTime = $this->fromDateTime($dateTime);
+
+  $date = substr($dateTime, 0, 10); // Y-m-d
+  $time = substr($dateTime, 11);  // H:i:s
+
+  $this->attributes['date'] = $date;
+  $this->attributes['time'] = $time;
+}

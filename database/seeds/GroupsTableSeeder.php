@@ -9,11 +9,13 @@ class GroupsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('groups')->truncate();
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        \DB::table('groups')->truncate();
 
-        DB::table('groups')->insert(array(
-            array(
-                'name' => 'Admin',
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+        \DB::table('groups')->insert([
+            [
+                'name'        => 'Admin',
                 'permissions' => '{
                           "admin": 1,
                           "admin.dashboard": 1,
@@ -98,9 +100,9 @@ class GroupsTableSeeder extends Seeder
                           "admin.group.edit": 1,
                           "admin.group.destroy": 1
                         }',
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime(),
-            ),
-        ));
+                'created_at'  => new DateTime(),
+                'updated_at'  => new DateTime()
+            ]
+        ]);
     }
 }

@@ -1,15 +1,15 @@
 <?php
 
-namespace Fully\Search;
+namespace App\Search;
 
-use Fully\Models\News;
-use Fully\Models\Article;
-use Fully\Models\PhotoGallery;
+use App\Models\News;
+use App\Models\Article;
+use App\Models\PhotoGallery;
 
 /**
  * Class Search.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class Search
 {

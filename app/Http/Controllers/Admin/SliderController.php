@@ -1,11 +1,11 @@
 <?php
 
-namespace Fully\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin;
 
-use Fully\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use View;
 use Input;
-use Fully\Models\Slider;
+use App\Models\Slider;
 use Response;
 use File;
 use Image;
@@ -15,7 +15,7 @@ use Flash;
 /**
  * Class SliderController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class SliderController extends Controller
 {

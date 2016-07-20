@@ -1,11 +1,11 @@
 <?php
 
-namespace Fully\Repositories\Menu;
+namespace App\Repositories\Menu;
 
 /**
  * Class AbstractMenuDecorator.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 abstract class AbstractMenuDecorator implements MenuInterface
 {

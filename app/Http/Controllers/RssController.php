@@ -1,15 +1,15 @@
 <?php
 
-namespace Fully\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Response;
-use Fully\Models\News;
-use Fully\Feeder\Facade\Feeder;
+use App\Models\News;
+use App\Feeder\Facade\Feeder;
 
 /**
  * Class RssController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class RssController extends Controller
 {

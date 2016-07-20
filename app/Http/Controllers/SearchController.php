@@ -1,17 +1,17 @@
 <?php
 
-namespace Fully\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
 use View;
 use Search;
-use Fully\Services\Pagination;
+use App\Services\Pagination;
 
 /**
  * Class SearchController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class SearchController extends Controller
 {

@@ -1,20 +1,20 @@
 <?php
 
-namespace Fully\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin;
 
 use View;
 use Input;
 use Flash;
-use Fully\Services\Pagination;
-use Fully\Http\Controllers\Controller;
-use Fully\Repositories\Project\ProjectInterface;
-use Fully\Exceptions\Validation\ValidationException;
-use Fully\Repositories\Project\ProjectRepository as Project;
+use App\Services\Pagination;
+use App\Http\Controllers\Controller;
+use App\Repositories\Project\ProjectInterface;
+use App\Exceptions\Validation\ValidationException;
+use App\Repositories\Project\ProjectRepository as Project;
 
 /**
  * Class ProjectController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class ProjectController extends Controller
 {

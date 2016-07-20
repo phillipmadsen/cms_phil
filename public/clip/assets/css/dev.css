@@ -1,0 +1,2 @@
+ul.main-navigation-menu ul li > ul li > a > i { color: #007AFF; font-weight: normal; background: yellow; }
+ul.main-navigation-menu li > ul li > ul.sub-menu > li > a { outline: solid 1px red; display: block; font-size: 14px; font-weight: 300; margin: 0; padding-bottom: 5px; padding-left: 40px; padding-right: 0; padding-top: 5px; text-decoration: none; }

@@ -1,17 +1,17 @@
 <?php
 
-namespace Fully\Repositories\Faq;
+namespace App\Repositories\Faq;
 
 use Config;
-use Fully\Models\Faq;
-use Fully\Repositories\RepositoryAbstract;
-use Fully\Repositories\CrudableInterface;
-use Fully\Exceptions\Validation\ValidationException;
+use App\Models\Faq;
+use App\Repositories\RepositoryAbstract;
+use App\Repositories\CrudableInterface;
+use App\Exceptions\Validation\ValidationException;
 
 /**
  * Class FaqRepository.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class FaqRepository extends RepositoryAbstract implements FaqInterface, CrudableInterface
 {
@@ -93,7 +93,7 @@ class FaqRepository extends RepositoryAbstract implements FaqInterface, Crudable
      *
      * @return bool|mixed
      *
-     * @throws \Fully\Exceptions\Validation\ValidationException
+     * @throws \App\Exceptions\Validation\ValidationException
      */
     public function create($attributes)
     {
@@ -113,7 +113,7 @@ class FaqRepository extends RepositoryAbstract implements FaqInterface, Crudable
      *
      * @return bool|mixed
      *
-     * @throws \Fully\Exceptions\Validation\ValidationException
+     * @throws \App\Exceptions\Validation\ValidationException
      */
     public function update($id, $attributes)
     {

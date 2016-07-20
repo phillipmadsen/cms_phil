@@ -1,4 +1,4 @@
-Fully CMS
+App CMS
 =============
 
 ### Laravel 5.1 Content Managment System

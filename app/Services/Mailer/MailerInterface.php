@@ -1,11 +1,11 @@
 <?php
 
-namespace Fully\Services;
+namespace App\Services;
 
 /**
  * Class MailInterface.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 interface MailerInterface
 {

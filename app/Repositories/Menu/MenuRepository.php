@@ -1,14 +1,14 @@
 <?php
 
-namespace Fully\Repositories\Menu;
+namespace App\Repositories\Menu;
 
-use Fully\Models\Menu;
-use Fully\Repositories\RepositoryAbstract;
+use App\Models\Menu;
+use App\Repositories\RepositoryAbstract;
 
 /**
  * Class MenuRepository.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class MenuRepository extends RepositoryAbstract implements MenuInterface
 {

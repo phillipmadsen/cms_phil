@@ -1,16 +1,16 @@
 <?php
 
-namespace Fully\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Cviebrock\EloquentSluggable\SluggableInterface;
-use Fully\Interfaces\ModelInterface as ModelInterface;
+use App\Interfaces\ModelInterface as ModelInterface;
 
 /**
  * Class Tag.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class Tag extends Model implements ModelInterface , SluggableInterface
 {
@@ -26,7 +26,7 @@ class Tag extends Model implements ModelInterface , SluggableInterface
 
     public function articles()
     {
-        return $this->belongsToMany('Fully\Models\Article', 'articles_tags');
+        return $this->belongsToMany('App\Models\Article', 'articles_tags');
     }
 
     public function setUrlAttribute($value)

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CreatePhotoGalleriesTable extends Migration
@@ -9,7 +10,7 @@ class CreatePhotoGalleriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('photo_galleries', function ($table) {
+        Schema::create('photo_galleries', function (Blueprint $table) {
 
             $table->increments('id');
             $table->string('title', 255);
@@ -18,6 +19,7 @@ class CreatePhotoGalleriesTable extends Migration
             $table->timestamps();
             $table->boolean('is_published')->default(true);
             $table->string('lang', 20);
+            $table->engine = 'InnoDB';
         });
     }
 

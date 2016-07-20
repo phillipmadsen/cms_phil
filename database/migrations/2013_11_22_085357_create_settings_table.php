@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateSettingsTable extends Migration
@@ -9,12 +9,13 @@ class CreateSettingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('settings', function ($table) {
+        Schema::create('settings', function (Blueprint $table) {
 
             $table->increments('id');
             $table->text('settings');
             $table->timestamps();
             $table->string('lang', 20);
+            $table->engine = 'InnoDB';
         });
     }
 

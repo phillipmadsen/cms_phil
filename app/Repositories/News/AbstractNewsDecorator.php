@@ -1,11 +1,11 @@
 <?php
 
-namespace Fully\Repositories\News;
+namespace App\Repositories\News;
 
 /**
  * Class AbstractNewsDecorator.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 abstract class AbstractNewsDecorator implements NewsInterface
 {

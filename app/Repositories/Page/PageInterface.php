@@ -1,13 +1,13 @@
 <?php
 
-namespace Fully\Repositories\Page;
+namespace App\Repositories\Page;
 
-use Fully\Repositories\RepositoryInterface;
+use App\Repositories\RepositoryInterface;
 
 /**
  * Interface PageInterface.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 interface PageInterface extends RepositoryInterface
 {

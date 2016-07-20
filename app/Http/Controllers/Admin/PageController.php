@@ -1,21 +1,21 @@
 <?php
 
-namespace Fully\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin;
 
 use View;
 use Input;
 use Flash;
 use Response;
-use Fully\Services\Pagination;
-use Fully\Http\Controllers\Controller;
-use Fully\Repositories\Page\PageInterface;
-use Fully\Repositories\Page\PageRepository as Page;
-use Fully\Exceptions\Validation\ValidationException;
+use App\Services\Pagination;
+use App\Http\Controllers\Controller;
+use App\Repositories\Page\PageInterface;
+use App\Repositories\Page\PageRepository as Page;
+use App\Exceptions\Validation\ValidationException;
 
 /**
  * Class PageController.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 class PageController extends Controller
 {

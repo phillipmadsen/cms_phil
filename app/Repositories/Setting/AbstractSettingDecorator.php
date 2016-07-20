@@ -1,11 +1,11 @@
 <?php
 
-namespace Fully\Repositories\Setting;
+namespace App\Repositories\Setting;
 
 /**
  * Class AbstractSettingDecorator.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 abstract class AbstractSettingDecorator implements SettingInterface
 {

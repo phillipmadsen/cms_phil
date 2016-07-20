@@ -1,11 +1,11 @@
 <?php
 
-namespace Fully\Repositories\Menu;
+namespace App\Repositories\Menu;
 
 /**
  * Interface MenuInterface.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 interface MenuInterface
 {

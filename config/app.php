@@ -11,9 +11,9 @@ return [
     | stack traces will be shown on every error that occurs within your
     | application. If disabled, a simple generic error page is shown.
     |
-    */
+     */
 
-    'debug' => env('APP_DEBUG', true),
+    'debug'           => env('APP_DEBUG', true),
     /*
     |--------------------------------------------------------------------------
     | Application URL
@@ -23,9 +23,9 @@ return [
     | the Artisan command line tool. You should set this to the root of
     | your application so that it is used when running Artisan tasks.
     |
-    */
+     */
 
-    'url' => 'http://localhost',
+    'url'             => 'http://localhost',
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -35,9 +35,9 @@ return [
     | will be used by the PHP date and date-time functions. We have gone
     | ahead and set this to a sensible default for you out of the box.
     |
-    */
+     */
 
-    'timezone' => 'UTC',
+    'timezone'        => 'UTC',
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
@@ -47,9 +47,9 @@ return [
     | by the translation service provider. You are free to set this value
     | to any of the locales which will be supported by the application.
     |
-    */
+     */
 
-    'locale' => 'en',
+    'locale'          => 'en',
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
@@ -59,7 +59,7 @@ return [
     | is not available. You may change the value to correspond to any of
     | the language folders that are provided through your application.
     |
-    */
+     */
 
     'fallback_locale' => 'en',
     /*
@@ -71,10 +71,10 @@ return [
     | to a random, 32 character string, otherwise these encrypted strings
     | will not be safe. Please do this before deploying an application!
     |
-    */
+     */
 
-    'key'    => env('APP_KEY', 'SomeRandomString'),
-    'cipher' => 'AES-256-CBC',
+    'key'             => env('APP_KEY', 'SomeRandomString'),
+    'cipher'          => 'AES-256-CBC',
     /*
     |--------------------------------------------------------------------------
     | Logging Configuration
@@ -86,9 +86,9 @@ return [
     |
     | Available Settings: "single", "daily", "syslog", "errorlog"
     |
-    */
+     */
 
-    'log' => 'daily',
+    'log'             => 'daily',
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -98,9 +98,9 @@ return [
     | request to your application. Feel free to add your own services to
     | this array to grant expanded functionality to your applications.
     |
-    */
+     */
 
-    'providers' => [
+    'providers'       => [
 
         /*
          * Laravel Framework Service Providers...
@@ -128,34 +128,55 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+
         Collective\Html\HtmlServiceProvider::class,
         /*
-         * Application Service Providers...
-         */
-        Fully\Providers\AppServiceProvider::class,
-        Fully\Providers\BusServiceProvider::class,
-        Fully\Providers\ConfigServiceProvider::class,
-        Fully\Providers\EventServiceProvider::class,
-        Fully\Providers\RouteServiceProvider::class,
+        |--------------------------------------------------------------------------
+        | Phillips Application Service Providers
+        |--------------------------------------------------------------------------*/
+        App\Providers\AppServiceProvider::class,
+        App\Providers\BusServiceProvider::class,
+        App\Providers\ConfigServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
         /*
-         * Fully
-         */
-        Fully\Providers\RepositoryServiceProvider::class,
-        Fully\Providers\ComposerServiceProvider::class,
-        Fully\Providers\FeederServiceProvider::class,
-        Fully\Providers\SearchServiceProvider::class,
+        |--------------------------------------------------------------------------
+        | phillips custom Service Providers
+        |--------------------------------------------------------------------------*/
+        App\Providers\RepositoryServiceProvider::class,
+        App\Providers\ComposerServiceProvider::class,
+        App\Providers\FeederServiceProvider::class,
+        App\Providers\SearchServiceProvider::class,
         /*
-         * 3rd
-         */
+        |--------------------------------------------------------------------------
+        | phillips custom services
+        |--------------------------------------------------------------------------*/
         Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
-        Barryvdh\Debugbar\ServiceProvider::class,
+
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         Sseffa\VideoApi\VideoApiServiceProvider::class,
+
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        MaddHatter\LaravelFullcalendar\ServiceProvider::class,
+
+        Caffeinated\Menus\MenusServiceProvider::class,
+        Beaudierman\Ups\UpsServiceProvider::class,
+        Evercode1\ViewMaker\ViewMakerServiceProvider::class,
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
+        \InfyOm\CoreTemplates\CoreTemplatesServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
+
+        Orangehill\Iseed\IseedServiceProvider::class,
+        Bootstrapper\BootstrapperL5ServiceProvider::class,
+        Mpociot\LaravelTestFactoryHelper\TestFactoryHelperServiceProvider::class
 
     ],
     /*
@@ -167,9 +188,9 @@ return [
     | is started. However, feel free to register as many as you wish as
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
-    */
+     */
 
-    'aliases' => [
+    'aliases'         => [
 
         'App'                 => Illuminate\Support\Facades\App::class,
         'Artisan'             => Illuminate\Support\Facades\Artisan::class,
@@ -204,8 +225,16 @@ return [
         'URL'                 => Illuminate\Support\Facades\URL::class,
         'Validator'           => Illuminate\Support\Facades\Validator::class,
         'View'                => Illuminate\Support\Facades\View::class,
+
+/*
+|--------------------------------------------------------------------------
+| Facades coding by phillip
+|--------------------------------------------------------------------------
+ */
+
         'Form'                => Collective\Html\FormFacade::class,
         'HTML'                => Collective\Html\HtmlFacade::class,
+        'Html'                => Collective\Html\HtmlFacade::class,
         'Activation'          => Cartalyst\Sentinel\Laravel\Facades\Activation::class,
         'Reminder'            => Cartalyst\Sentinel\Laravel\Facades\Reminder::class,
         'Sentinel'            => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
@@ -215,10 +244,39 @@ return [
         'Breadcrumbs'         => DaveJamesMiller\Breadcrumbs\Facade::class,
         'Flash'               => Laracasts\Flash\Flash::class,
         'VideoApi'            => Sseffa\VideoApi\Facades\VideoApi::class,
-        'Feeder'              => Fully\Feeder\Facade\Feeder::class,
-        'Search'              => Fully\Search\Facade\Search::class,
-        'Flash'               => Laracasts\Flash\Flash::class
+        'Feeder'              => App\Feeder\Facade\Feeder::class,
+        'Search'              => App\Search\Facade\Search::class,
+        'Flash'               => Laracasts\Flash\Flash::class,
+        'Str'                 => Illuminate\Support\Str::class,
+        'Ups'                 => Beaudierman\Ups\Facades\Ups::class,
 
-    ],
+        'Accordion'           => Bootstrapper\Facades\Accordion::class,
+        'Alert'               => Bootstrapper\Facades\Alert::class,
+        'Badge'               => Bootstrapper\Facades\Badge::class,
+        'Breadcrumb'          => Bootstrapper\Facades\Breadcrumb::class,
+        'Button'              => Bootstrapper\Facades\Button::class,
+        'ButtonGroup'         => Bootstrapper\Facades\ButtonGroup::class,
+        'Carousel'            => Bootstrapper\Facades\Carousel::class,
+        'ControlGroup'        => Bootstrapper\Facades\ControlGroup::class,
+        'DropdownButton'      => Bootstrapper\Facades\DropdownButton::class,
+        'BootForm'            => Bootstrapper\Facades\Form::class,
+        'Helpers'             => Bootstrapper\Facades\Helpers::class,
+        'Icon'                => Bootstrapper\Facades\Icon::class,
+        'InputGroup'          => Bootstrapper\Facades\InputGroup::class,
+        'BootImage'           => Bootstrapper\Facades\Image::class,
+        'Label'               => Bootstrapper\Facades\Label::class,
+        'MediaObject'         => Bootstrapper\Facades\MediaObject::class,
+        'Modal'               => Bootstrapper\Facades\Modal::class,
+        'Navbar'              => Bootstrapper\Facades\Navbar::class,
+        'Navigation'          => Bootstrapper\Facades\Navigation::class,
+        'Panel'               => Bootstrapper\Facades\Panel::class,
+        'ProgressBar'         => Bootstrapper\Facades\ProgressBar::class,
+        'Tabbable'            => Bootstrapper\Facades\Tabbable::class,
+        'Table'               => Bootstrapper\Facades\Table::class,
+        'Thumbnail'           => Bootstrapper\Facades\Thumbnail::class,
+        'Menu'                => Caffeinated\Menus\Facades\Menu::class,
+        'Uuid'                => Webpatser\Uuid\Uuid::class,
+
+    ]
 
 ];

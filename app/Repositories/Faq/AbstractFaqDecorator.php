@@ -1,11 +1,11 @@
 <?php
 
-namespace Fully\Repositories\Faq;
+namespace App\Repositories\Faq;
 
 /**
  * Class AbstractFaqDecorator.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 abstract class AbstractFaqDecorator implements FaqInterface
 {

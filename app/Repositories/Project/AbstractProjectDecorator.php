@@ -1,11 +1,11 @@
 <?php
 
-namespace Fully\Repositories\Project;
+namespace App\Repositories\Project;
 
 /**
  * Class AbstractProjectDecorator.
  *
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Phillip Madsen <contact@affordableprogrammer.com>
  */
 abstract class AbstractProjectDecorator implements ProjectInterface
 {
