@@ -104,7 +104,7 @@ $.extend($.jgrid,{
 			srcformat: 'Y-m-d',
 			newformat: 'd/m/Y',
 			masks : {
-	            ISO8601Long:"Y-m-d H:i:s",
+	            ISO8601Long:"m-d-Y H:i:s",
 	            ISO8601Short:"Y-m-d",
 	            ShortDate: "j/n/Y",
 	            LongDate: "l d. F Y",
@@ -113,7 +113,7 @@ $.extend($.jgrid,{
 	            ShortTime: "G:i",
 	            LongTime: "G:i:s",
 	            SortableDateTime: "Y-m-d\\TH:i:s",
-	            UniversalSortableDateTime: "Y-m-d H:i:sO",
+	            UniversalSortableDateTime: "m-d-Y H:i:sO",
 	            YearMonth: "F Y"
 	        },
 	        reformatAfterEdit : false

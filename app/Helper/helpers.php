@@ -83,7 +83,7 @@ function langRedirectRoute($route)
 
 function setSomeTimestampAttribute($dateTime)
 {
-  // parse param to get string 'Y-m-d H:i:s'
+  // parse param to get string 'm-d-Y H:i:s'
   $dateTime = $this->fromDateTime($dateTime);
 
   $date = substr($dateTime, 0, 10); // Y-m-d

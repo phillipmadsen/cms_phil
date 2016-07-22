@@ -5,14 +5,14 @@ namespace app\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Category;
-use App\Product;
-use App\CategoryProduct;
-use App\AlbumPhoto;
-use App\Section;
-use App\Cart;
-use App\Option;
-use App\OptionValue;
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\CategoryProduct;
+use App\Models\AlbumPhoto;
+use App\Models\Section;
+use App\Models\Cart;
+use App\Models\Option;
+use App\Models\OptionValue;
 use File;
 use Auth;
 use App;
@@ -34,7 +34,7 @@ class ProductController extends Controller
     public function index()
     {
         $new_products = Product::orderBy('created_at', 'desc')->take(12)->get();
-        $get_best_sellers = App\OrderProduct::select('product_id', \DB::raw('COUNT(product_id) as count'))->groupBy('product_id')->orderBy('count', 'desc')->take(8)->get();
+        $get_best_sellers = App\Models\OrderProduct::select('product_id', \DB::raw('COUNT(product_id) as count'))->groupBy('product_id')->orderBy('count', 'desc')->take(8)->get();
         $best_sellers = [];
         foreach ($get_best_sellers as $product) {
             $best_sellers[] = $product->product;
@@ -48,7 +48,7 @@ class ProductController extends Controller
         $product = Product::find($id);
 
         $product_categories = $product->categories()->lists('id')->toArray();
-        
+
         $similair = Category::find($product_categories[array_rand($product_categories)])->products()->whereNotIn('id', array($id))->orderByRaw("RAND()")->take(6)->get();
         helperFunctions::getPageInfo($sections,$cart,$total);
         return view('site.product', compact('sections', 'product', 'similair', 'cart', 'total'));
@@ -84,7 +84,7 @@ class ProductController extends Controller
         $request->file('thumbnail')->move($dest, $name);
         $product = $request->all();
         $product['thumbnail'] = "/".$dest.$name;
-        
+
         $product = Product::create($product);
 
         /**
@@ -107,7 +107,7 @@ class ProductController extends Controller
         /**
     	 * Linking the categories to the product
     	 */
-        
+
         foreach ($request->categories as $category_id) {
             CategoryProduct::create(['category_id' => $category_id, 'product_id' => $product->id]);
         }
@@ -115,7 +115,7 @@ class ProductController extends Controller
         /**
          * Linking the options to the product
          */
-        
+
         if ($request->has('options')){
             foreach ($request->options as $option_details) {
                 if (!empty($option_details['name']) && !empty($option_details['values'][0]) ) {
@@ -132,7 +132,7 @@ class ProductController extends Controller
                 }
             }
         }
-        
+
         return \Redirect('/admin/products')->with([
             'flash_message' => 'Product Created Successfully'
         ]);
@@ -162,7 +162,7 @@ class ProductController extends Controller
         }
 
         /**
-    	 * Remove the old categories from the pivot table and maintain the reused ones 
+    	 * Remove the old categories from the pivot table and maintain the reused ones
     	 */
         $added_categories = [];
         foreach ($product->categories as $category) {
@@ -181,9 +181,9 @@ class ProductController extends Controller
                 CategoryProduct::create(['category_id' => $category_id, 'product_id' => $product->id]);
             }
         }
-        
+
         $info = $request->all();
-        
+
         /**
     	 * Upload a new thumbnail and delete the old one
     	 */
@@ -215,16 +215,16 @@ class ProductController extends Controller
         /**
          * Linking the options to the product
          */
-        
+
         if ($request->has('options')){
             foreach ($request->options as $option_details) {
                 if (!empty($option_details['name']) && !empty($option_details['values']['name'][0]) ) {
-                    if (isset($option_details['id'])) 
+                    if (isset($option_details['id']))
                     {
                         $size = count($option_details['values']['id']);
                         Option::find($option_details['id'])->update(['name' => $option_details['name']]);
                         foreach ($option_details['values']['name'] as $key => $value) {
-                            if ($key < $size) 
+                            if ($key < $size)
                             {
                                 OptionValue::find($option_details['values']['id'][$key])->update(['value' => $value]);
                             }
@@ -256,7 +256,7 @@ class ProductController extends Controller
             }
         }
 
-        
+
 
         return \Redirect()->back()->with([
             'flash_message' => 'Product Successfully Modified'
@@ -288,7 +288,7 @@ class ProductController extends Controller
     {
         Option::destroy($id);
         return \Redirect()->back();
-    }  
+    }
 
     public function deleteOptionValue($id)
     {

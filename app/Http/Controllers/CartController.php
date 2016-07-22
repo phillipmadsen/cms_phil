@@ -5,15 +5,15 @@ namespace app\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Cart;
-use App\Product;
-use App\User;
-use App\Order;
-use App\Section;
-use App\Payment;
-use App\OrderProduct;
-use App\UserInfo;
-use App\OptionValue;
+use App\Models\Cart;
+use App\Models\Product;
+use App\Models\User;
+use App\Models\Order;
+use App\Models\Section;
+use App\Models\Payment;
+use App\Models\OrderProduct;
+use App\Models\UserInfo;
+use App\Models\OptionValue;
 use Auth;
 use App;
 use Session;
@@ -90,7 +90,7 @@ class CartController extends Controller
                             $cart['qty'] = 1;
                         }
                         Session::forget('cart.'.$key);
-                        if ($request->options) 
+                        if ($request->options)
                         {
                             Session::push('cart', [
                                 'product_id' => $product_id,
@@ -114,7 +114,7 @@ class CartController extends Controller
              * If the product is not in the cart , add a new one
              */
             if (!$exists) {
-                if ($request->options) 
+                if ($request->options)
                 {
                     Session::push('cart', [
                         'product_id' => $product_id,

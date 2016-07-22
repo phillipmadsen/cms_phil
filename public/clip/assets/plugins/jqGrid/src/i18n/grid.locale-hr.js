@@ -3,7 +3,7 @@
  * jqGrid Croatian Translation
  * Version 1.0.1 (developed for jQuery Grid 4.4)
  * msajko@gmail.com
- * 
+ *
  * Dual licensed under the MIT and GPL licenses:
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
@@ -48,7 +48,7 @@ $.extend($.jgrid,{
 			novalue : " zahtjevan podatak je obavezan!",
 			customarray : "Opcionalna funkcija trebala bi bili polje (array)!",
 			customfcheck : "Custom function should be present in case of custom checking!"
-			
+
 		}
 	},
 	view : {
@@ -109,7 +109,7 @@ $.extend($.jgrid,{
 				// see http://php.net/manual/en/function.date.php for PHP format used in jqGrid
 				// and see http://docs.jquery.com/UI/Datepicker/formatDate
 				// and https://github.com/jquery/globalize#dates for alternative formats used frequently
-				ISO8601Long: "Y-m-d H:i:s",
+				ISO8601Long: "m-d-Y H:i:s",
 				ISO8601Short: "Y-m-d",
 				// short date:
 				//    d - Day of the month, 2 digits with leading zeros
@@ -145,7 +145,7 @@ $.extend($.jgrid,{
 				//    s - Seconds, with leading zeros
 				LongTime: "H:i:s", // in jQuery UI Datepicker: "HH:mm:ss"
 				SortableDateTime: "Y-m-d\\TH:i:s",
-				UniversalSortableDateTime: "Y-m-d H:i:sO",
+				UniversalSortableDateTime: "m-d-Y H:i:sO",
 				// month with year
 				//    F - A full textual representation of a month
 				//    Y - A full numeric representation of a year, 4 digits

@@ -2,7 +2,7 @@
 /**
  * jqGrid Hungarian Translation
  * Őrszigety Ádám udx6bs@freemail.hu
- * http://trirand.com/blog/ 
+ * http://trirand.com/blog/
  * Dual licensed under the MIT and GPL licenses:
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
@@ -48,7 +48,7 @@ $.extend($.jgrid,{
 			novalue : " visszatérési érték kötelező!!",
 			customarray : "Custom function should return array!",
 			customfcheck : "Custom function should be present in case of custom checking!"
-			
+
 		}
 	},
 	view : {
@@ -106,7 +106,7 @@ $.extend($.jgrid,{
 			srcformat: 'Y-m-d',
 			newformat: 'Y/m/d',
 			masks : {
-				ISO8601Long:"Y-m-d H:i:s",
+				ISO8601Long:"m-d-Y H:i:s",
 				ISO8601Short:"Y-m-d",
 				ShortDate: "Y/j/n",
 				LongDate: "Y. F hó d., l",
@@ -115,7 +115,7 @@ $.extend($.jgrid,{
 				ShortTime: "a g:i",
 				LongTime: "a g:i:s",
 				SortableDateTime: "Y-m-d\\TH:i:s",
-				UniversalSortableDateTime: "Y-m-d H:i:sO",
+				UniversalSortableDateTime: "m-d-Y H:i:sO",
 				YearMonth: "Y, F"
 			},
 			reformatAfterEdit : false

@@ -2,7 +2,7 @@
 /**
  * jqGrid Hebrew Translation
  * Shuki Shukrun shukrun.shuki@gmail.com
- * http://trirand.com/blog/ 
+ * http://trirand.com/blog/
  * Dual licensed under the MIT and GPL licenses:
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
@@ -104,7 +104,7 @@ $.extend($.jgrid,{
 			srcformat: 'Y-m-d',
 			newformat: 'd/m/Y',
 			masks : {
-				ISO8601Long:"Y-m-d H:i:s",
+				ISO8601Long:"m-d-Y H:i:s",
 				ISO8601Short:"Y-m-d",
 				ShortDate: "n/j/Y",
 				LongDate: "l, F d, Y",
@@ -113,7 +113,7 @@ $.extend($.jgrid,{
 				ShortTime: "g:i A",
 				LongTime: "g:i:s A",
 				SortableDateTime: "Y-m-d\\TH:i:s",
-				UniversalSortableDateTime: "Y-m-d H:i:sO",
+				UniversalSortableDateTime: "m-d-Y H:i:sO",
 				YearMonth: "F, Y"
 			},
 			reformatAfterEdit : false

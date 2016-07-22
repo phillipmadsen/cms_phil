@@ -18,7 +18,7 @@ $.extend($.jgrid,{
 	search : {
 	    caption: "Arama...",
 	    Find: "Bul",
-	    Reset: "Temizle",	    
+	    Reset: "Temizle",
 	    odata : ['eşit', 'eşit değil', 'daha az', 'daha az veya eşit', 'daha fazla', 'daha fazla veya eşit', 'ile başlayan', 'ile başlamayan', 'içinde', 'içinde değil', 'ile biten', 'ile bitmeyen', 'içeren', 'içermeyen'],
 	    groupOps: [	{ op: "VE", text: "tüm" },	{ op: "VEYA",  text: "herhangi" }	],
 		matchText: " uyan",
@@ -77,7 +77,7 @@ $.extend($.jgrid,{
 	col : {
 	    caption: "Sütunları göster/gizle",
 	    bSubmit: "Gönder",
-	    bCancel: "İptal"	
+	    bCancel: "İptal"
 	},
 	errors : {
 		errcap : "Hata",
@@ -103,7 +103,7 @@ $.extend($.jgrid,{
 			srcformat: 'Y-m-d',
 			newformat: 'd/m/Y',
 			masks : {
-	            ISO8601Long:"Y-m-d H:i:s",
+	            ISO8601Long:"m-d-Y H:i:s",
 	            ISO8601Short:"Y-m-d",
 	            ShortDate: "n/j/Y",
 	            LongDate: "l, F d, Y",
@@ -112,7 +112,7 @@ $.extend($.jgrid,{
 	            ShortTime: "g:i A",
 	            LongTime: "g:i:s A",
 	            SortableDateTime: "Y-m-d\\TH:i:s",
-	            UniversalSortableDateTime: "Y-m-d H:i:sO",
+	            UniversalSortableDateTime: "m-d-Y H:i:sO",
 	            YearMonth: "F, Y"
 	        },
 	        reformatAfterEdit : false

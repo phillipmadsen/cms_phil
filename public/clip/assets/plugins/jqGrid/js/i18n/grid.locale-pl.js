@@ -4,7 +4,7 @@
  * Łukasz Schab lukasz@freetree.pl
  * http://FreeTree.pl
  *
- * Updated names, abbreviations, currency and date/time formats for Polish norms (also corresponding with CLDR v21.0.1 --> http://cldr.unicode.org/index) 
+ * Updated names, abbreviations, currency and date/time formats for Polish norms (also corresponding with CLDR v21.0.1 --> http://cldr.unicode.org/index)
  * Tomasz Pęczek tpeczek@gmail.com
  * http://tpeczek.blogspot.com; http://tpeczek.codeplex.com
  *
@@ -109,7 +109,7 @@ $.extend($.jgrid,{
 			srcformat: 'Y-m-d',
 			newformat: 'd.m.Y',
 			masks : {
-				ISO8601Long: "Y-m-d H:i:s",
+				ISO8601Long: "m-d-Y H:i:s",
 				ISO8601Short: "Y-m-d",
 				ShortDate: "d.m.y",
 				LongDate: "l, j F Y",
@@ -118,7 +118,7 @@ $.extend($.jgrid,{
 				ShortTime: "H:i",
 				LongTime: "H:i:s",
 				SortableDateTime: "Y-m-d\\TH:i:s",
-				UniversalSortableDateTime: "Y-m-d H:i:sO",
+				UniversalSortableDateTime: "m-d-Y H:i:sO",
 				YearMonth: "F Y"
 			},
 			reformatAfterEdit : false

@@ -2,7 +2,7 @@
 /**
  * jqGrid English Translation
  * Tony Tomov tony@trirand.com
- * http://trirand.com/blog/ 
+ * http://trirand.com/blog/
  * Dual licensed under the MIT and GPL licenses:
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
@@ -47,7 +47,7 @@ $.extend($.jgrid,{
 			novalue : " 반환값이 필요합니다!",
 			customarray : "사용자정의 함수는 배열을 반환해야 합니다!",
 			customfcheck : "Custom function should be present in case of custom checking!"
-			
+
 		}
 	},
 	view : {
@@ -105,7 +105,7 @@ $.extend($.jgrid,{
 			srcformat: 'Y-m-d',
 			newformat: 'm-d-Y',
 			masks : {
-				ISO8601Long:"Y-m-d H:i:s",
+				ISO8601Long:"m-d-Y H:i:s",
 				ISO8601Short:"Y-m-d",
 				ShortDate: "Y/j/n",
 				LongDate: "l, F d, Y",
@@ -114,7 +114,7 @@ $.extend($.jgrid,{
 				ShortTime: "g:i A",
 				LongTime: "g:i:s A",
 				SortableDateTime: "Y-m-d\\TH:i:s",
-				UniversalSortableDateTime: "Y-m-d H:i:sO",
+				UniversalSortableDateTime: "m-d-Y H:i:sO",
 				YearMonth: "F, Y"
 			},
 			reformatAfterEdit : false

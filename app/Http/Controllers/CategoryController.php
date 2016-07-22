@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Services\Pagination;
 use App\Repositories\Tag\TagInterface;
@@ -8,6 +9,8 @@ use App\Repositories\Tag\TagRepository as Tag;
 use App\Repositories\Category\CategoryInterface;
 use App\Repositories\Article\ArticleRepository as Article;
 use App\Repositories\Category\CategoryRepository as Category;
+
+
 /**
  * Class CategoryController.
  *

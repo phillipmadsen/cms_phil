@@ -6,7 +6,7 @@
  * Dual licensed under the MIT and GPL licenses:
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
- * 
+ *
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -48,7 +48,7 @@ $.extend($.jgrid,{
 			novalue : " 需要傳回值！",
 			customarray : "自訂函數應傳回陣列！",
 			customfcheck : "自訂檢查應有自訂函數！"
-			
+
 		}
 	},
 	view : {
@@ -106,7 +106,7 @@ $.extend($.jgrid,{
 			srcformat: 'Y-m-d',
 			newformat: 'm-d-Y',
 			masks : {
-				ISO8601Long:"Y-m-d H:i:s",
+				ISO8601Long:"m-d-Y H:i:s",
 				ISO8601Short:"Y-m-d",
 				ShortDate: "Y/j/n",
 				LongDate: "l, F d, Y",
@@ -115,7 +115,7 @@ $.extend($.jgrid,{
 				ShortTime: "g:i A",
 				LongTime: "g:i:s A",
 				SortableDateTime: "Y-m-d\\TH:i:s",
-				UniversalSortableDateTime: "Y-m-d H:i:sO",
+				UniversalSortableDateTime: "m-d-Y H:i:sO",
 				YearMonth: "F, Y"
 			},
 			reformatAfterEdit : false

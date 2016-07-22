@@ -78,7 +78,7 @@ $.extend($.jgrid,{
 	col : {
 	    caption: "Показать/скрыть столбцы",
 	    bSubmit: "Сохранить",
-	    bCancel: "Отмена"	
+	    bCancel: "Отмена"
 	},
 	errors : {
 		errcap : "Ошибка",
@@ -104,7 +104,7 @@ $.extend($.jgrid,{
 			srcformat: 'Y-m-d',
 			newformat: 'd.m.Y',
 			masks : {
-	            ISO8601Long:"Y-m-d H:i:s",
+	            ISO8601Long:"m-d-Y H:i:s",
 	            ISO8601Short:"Y-m-d",
 	            ShortDate: "n.j.Y",
 	            LongDate: "l, F d, Y",
@@ -113,7 +113,7 @@ $.extend($.jgrid,{
 	            ShortTime: "G:i",
 	            LongTime: "G:i:s",
 	            SortableDateTime: "Y-m-d\\TH:i:s",
-	            UniversalSortableDateTime: "Y-m-d H:i:sO",
+	            UniversalSortableDateTime: "m-d-Y H:i:sO",
 	            YearMonth: "F, Y"
 	        },
 	        reformatAfterEdit : false

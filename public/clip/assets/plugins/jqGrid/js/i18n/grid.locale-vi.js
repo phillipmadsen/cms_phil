@@ -2,7 +2,7 @@
 /**
  * jqGrid Vietnamese Translation
  * Lê Đình Dũng dungtdc@gmail.com
- * http://trirand.com/blog/ 
+ * http://trirand.com/blog/
  * Dual licensed under the MIT and GPL licenses:
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
@@ -47,7 +47,7 @@ $.extend($.jgrid,{
 			novalue : " giá trị trả về bắt buộc phải có!",
 			customarray : "Hàm nên trả về một mảng!",
 			customfcheck : "Custom function should be present in case of custom checking!"
-			
+
 		}
 	},
 	view : {
@@ -111,7 +111,7 @@ $.extend($.jgrid,{
 				// one can find on https://github.com/jquery/globalize/tree/master/lib/cultures many
 				// information about date, time, numbers and currency formats used in different countries
 				// one should just convert the information in PHP format
-				ISO8601Long:"Y-m-d H:i:s",
+				ISO8601Long:"m-d-Y H:i:s",
 				ISO8601Short:"Y-m-d",
 				// short date:
 				//    n - Numeric representation of a month, without leading zeros
@@ -151,7 +151,7 @@ $.extend($.jgrid,{
 				//    A - Uppercase Ante meridiem and Post meridiem (AM or PM)
 				LongTime: "g:i:s A", // in jQuery UI Datepicker: "h:mm:ss tt"
 				SortableDateTime: "Y-m-d\\TH:i:s",
-				UniversalSortableDateTime: "Y-m-d H:i:sO",
+				UniversalSortableDateTime: "m-d-Y H:i:sO",
 				// month with year
 				//    Y - A full numeric representation of a year, 4 digits
 				//    F - A full textual representation of a month

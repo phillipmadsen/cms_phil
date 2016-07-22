@@ -1,4 +1,4 @@
-﻿/* =========================================================
+/* =========================================================
  * bootstrap-datetimepicker.js
  * =========================================================
  * Copyright 2012 Stefan Petre
@@ -1269,7 +1269,7 @@
 				if (field == 'input')
 					return 'Y-m-d H:i';
 				else
-					return 'Y-m-d H:i:s';
+					return 'm-d-Y H:i:s';
 			} else {
 				throw new Error("Invalid format type.");
 			}
